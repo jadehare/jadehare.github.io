@@ -22,17 +22,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Welcome">
-<meta property="og:url" content="http://yoursite.com/2020/08/10/Welcome/index.html">
+  <meta name="description" content="类型 声明对象 object：1234  let person &#x3D; new Object()  let person &#x3D; &amp;#123;&amp;#125;  &#96;&#96;&#96;  - Array: let arr &#x3D; new Array()let arr &#x3D; {}12345678910111213141516171819---## 检测类型- typeof   - &amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://yoursite.com/2020/10/18/JavaScript/index.html">
 <meta property="og:site_name" content="狗蛋">
+<meta property="og:description" content="类型 声明对象 object：1234  let person &#x3D; new Object()  let person &#x3D; &amp;#123;&amp;#125;  &#96;&#96;&#96;  - Array: let arr &#x3D; new Array()let arr &#x3D; {}12345678910111213141516171819---## 检测类型- typeof   - &amp;quo">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-09T19:13:59.384Z">
-<meta property="article:modified_time" content="2020-08-09T19:13:59.384Z">
+<meta property="article:published_time" content="2020-10-18T07:06:14.000Z">
+<meta property="article:modified_time" content="2020-10-18T08:43:38.672Z">
 <meta property="article:author" content="jadehare">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/10/Welcome/">
+<link rel="canonical" href="http://yoursite.com/2020/10/18/JavaScript/">
 
 
 <script class="page-configurations">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>Welcome | 狗蛋</title>
+  <title>JavaScript | 狗蛋</title>
   
 
 
@@ -151,7 +153,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -163,6 +165,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现重载"><span class="nav-number">2.</span> <span class="nav-text">实现重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作"><span class="nav-number">3.</span> <span class="nav-text">数组操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈操作"><span class="nav-number">3.0.1.</span> <span class="nav-text">栈操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列操作"><span class="nav-number">3.0.2.</span> <span class="nav-text">队列操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作数组"><span class="nav-number">3.0.3.</span> <span class="nav-text">操作数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#splice-a-b-…-删除a开始，b个值-包含a-再插入…"><span class="nav-number">4.</span> <span class="nav-text">splice(a,b,…) 删除a开始，b个值,包含a. 再插入…</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -217,7 +220,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/10/Welcome/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/18/JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +235,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Welcome
+          JavaScript
         </h1>
 
         <div class="post-meta">
@@ -241,8 +244,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-08-10 03:13:59" itemprop="dateCreated datePublished" datetime="2020-08-10T03:13:59+08:00">2020-08-10</time>
+              <time title="Created: 2020-10-18 15:06:14 / Modified: 16:43:38" itemprop="dateCreated datePublished" datetime="2020-10-18T15:06:14+08:00">2020-10-18</time>
             </span>
 
           
@@ -254,7 +258,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><ul>
+<li>声明对象<ul>
+<li>object：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  let person &#x3D; new Object()</span><br><span class="line">  let person &#x3D; &#123;&#125;</span><br><span class="line">  &#96;&#96;&#96;  </span><br><span class="line">- Array:</span><br></pre></td></tr></table></figure>
+let arr = new Array()<br>let arr = {}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">## 检测类型</span><br><span class="line">- typeof </span><br><span class="line">  - &quot;undefined&quot;</span><br><span class="line">  - &quot;boolean&quot;</span><br><span class="line">  - &quot;string&quot;</span><br><span class="line">  - &quot;number&quot;</span><br><span class="line">  - &quot;object&quot; 对象或者null</span><br><span class="line">  - &quot;function&quot;</span><br><span class="line">- 引用类型</span><br><span class="line">  - instanceof </span><br><span class="line"></span><br><span class="line">- 检测数组</span><br><span class="line">  - Array.isArray()</span><br><span class="line"></span><br><span class="line">- 检测类型</span><br><span class="line">  &#96;&#96;&#96; JavaScript</span><br><span class="line">  Object.prototype.toString.call()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="实现重载"><a href="#实现重载" class="headerlink" title="实现重载"></a>实现重载</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addMethod</span>(<span class="params">obj,name,func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> old = obj[name];</span><br><span class="line">    obj[name] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">arguments</span>.length === func.length)&#123;</span><br><span class="line">            <span class="keyword">return</span> func.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> old === <span class="string">"function"</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> old.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h2><ul>
+<li>push() 推入数组末尾</li>
+<li>pop() 从数组末尾取出</li>
+<li>unshift() 数组前端添加</li>
+<li>shift() 数组前端取出</li>
+</ul>
+<h4 id="栈操作"><a href="#栈操作" class="headerlink" title="栈操作"></a>栈操作</h4><ul>
+<li>push() 推入 pop()取出<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4></li>
+<li>push() 推入 shift()取出</li>
+</ul>
+<h4 id="操作数组"><a href="#操作数组" class="headerlink" title="操作数组"></a>操作数组</h4><ul>
+<li>slice(a,b) 返回a-b之间的值,含a不含b</li>
+<li><h2 id="splice-a-b-…-删除a开始，b个值-包含a-再插入…"><a href="#splice-a-b-…-删除a开始，b个值-包含a-再插入…" class="headerlink" title="splice(a,b,…) 删除a开始，b个值,包含a. 再插入…"></a>splice(a,b,…) 删除a开始，b个值,包含a. 再插入…</h2></li>
+</ul>
+
     </div>
 
     
@@ -269,13 +298,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/05/Debug/" rel="prev" title="Cocos Creator Android and IOS Debug">
-      <i class="fa fa-chevron-left"></i> Cocos Creator Android and IOS Debug
+    <a href="/2020/10/17/cocos-creator-note/" rel="prev" title="Cocos Creator 笔记">
+      <i class="fa fa-chevron-left"></i> Cocos Creator 笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/11/nginx/" rel="next" title="Centos V2ray + Nginx + WS">
-      Centos V2ray + Nginx + WS <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
