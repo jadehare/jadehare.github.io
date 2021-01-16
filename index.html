@@ -357,7 +357,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 01:26:25" itemprop="dateModified" datetime="2020-12-24T01:26:25+08:00">2020-12-24</time>
+                <time title="Modified: 2021-01-16 16:13:16" itemprop="dateModified" datetime="2021-01-16T16:13:16+08:00">2021-01-16</time>
               </span>
 
           
@@ -376,6 +376,8 @@
 <li>计算a向量在b向量上的投影: a的单位向量乘以b向量长度再乘以两向量夹角余弦</li>
 <li>sqrt(dot(a,a)) = length(a) </li>
 </ul>
+<hr>
+<h1 id="ShaderToy"><a href="#ShaderToy" class="headerlink" title="ShaderToy"></a>ShaderToy</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 平滑过渡</span><br><span class="line">float smoothstep(float a, float b, float x)&#123;</span><br><span class="line">    &#x2F;&#x2F; saturate 取0 ~ 1范围内的值</span><br><span class="line">    float t &#x3D; saturate((x - a)&#x2F;(b - a));</span><br><span class="line">    return t*t*(3.0 - (2.0*t));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 混合函数</span><br><span class="line">vec3 mix(vec3 x,vec3 y,float a)&#123;</span><br><span class="line">    return x * (1. - a) + y * a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -758,7 +760,7 @@ let arr = new Array()<br>let arr = {}<figure class="highlight plain"><table><tr>
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
