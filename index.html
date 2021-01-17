@@ -500,7 +500,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-20 22:32:09" itemprop="dateModified" datetime="2020-10-20T22:32:09+08:00">2020-10-20</time>
+                <time title="Modified: 2021-01-17 21:03:07" itemprop="dateModified" datetime="2021-01-17T21:03:07+08:00">2021-01-17</time>
               </span>
 
           
@@ -514,14 +514,43 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><ul>
 <li>声明对象<ul>
-<li>object：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  let person &#x3D; new Object()</span><br><span class="line">  let person &#x3D; &#123;&#125;</span><br><span class="line">  &#96;&#96;&#96;  </span><br><span class="line">- Array:</span><br></pre></td></tr></table></figure>
-let arr = new Array()<br>let arr = {}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line">## 检测类型</span><br><span class="line">- typeof </span><br><span class="line">  - &quot;undefined&quot;</span><br><span class="line">  - &quot;boolean&quot;</span><br><span class="line">  - &quot;string&quot;</span><br><span class="line">  - &quot;number&quot;</span><br><span class="line">  - &quot;object&quot; 对象或者null</span><br><span class="line">  - &quot;function&quot;</span><br><span class="line">- 引用类型</span><br><span class="line">  - instanceof </span><br><span class="line"></span><br><span class="line">- 检测数组</span><br><span class="line">  - Array.isArray()</span><br><span class="line"></span><br><span class="line">- 检测类型</span><br><span class="line">  &#96;&#96;&#96; JavaScript</span><br><span class="line">  Object.prototype.toString.call()</span><br></pre></td></tr></table></figure>
+<li>object：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let person &#x3D; new Object()</span><br><span class="line">let person &#x3D; &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Array:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; new Array()</span><br><span class="line">let arr &#x3D; &#123;&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <hr>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><ul>
+<li><p>typeof</p>
+<ul>
+<li>“undefined”</li>
+<li>“boolean”</li>
+<li>“string”</li>
+<li>“number”</li>
+<li>“object” 对象或者 null</li>
+<li>“function”</li>
+</ul>
+</li>
+<li><p>引用类型</p>
+<ul>
+<li>instanceof</li>
+</ul>
+</li>
+<li><p>检测数组</p>
+<ul>
+<li>Array.isArray()</li>
+</ul>
+</li>
+<li><p>检测类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
 <h2 id="实现重载"><a href="#实现重载" class="headerlink" title="实现重载"></a>实现重载</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addMethod</span>(<span class="params">obj,name,func</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> old = obj[name];</span><br><span class="line">    obj[name] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">arguments</span>.length === func.length)&#123;</span><br><span class="line">            <span class="keyword">return</span> func.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> old === <span class="string">"function"</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> old.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h2><ul>
 <li>push() 推入数组末尾</li>
@@ -530,13 +559,35 @@ let arr = new Array()<br>let arr = {}<figure class="highlight plain"><table><tr>
 <li>shift() 数组前端取出</li>
 </ul>
 <h4 id="栈操作"><a href="#栈操作" class="headerlink" title="栈操作"></a>栈操作</h4><ul>
-<li>push() 推入 pop()取出<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4></li>
+<li>push() 推入 pop()取出</li>
+</ul>
+<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4><ul>
 <li>push() 推入 shift()取出</li>
 </ul>
 <h4 id="操作数组"><a href="#操作数组" class="headerlink" title="操作数组"></a>操作数组</h4><ul>
-<li>slice(a,b) 返回a-b之间的值,含a不含b</li>
-<li><h2 id="splice-a-b-…-删除a开始，b个值-包含a-再插入…"><a href="#splice-a-b-…-删除a开始，b个值-包含a-再插入…" class="headerlink" title="splice(a,b,…) 删除a开始，b个值,包含a. 再插入…"></a>splice(a,b,…) 删除a开始，b个值,包含a. 再插入…</h2></li>
+<li>slice(a,b) 返回 a-b 之间的值,含 a 不含 b</li>
+<li>splice(a,b,…) 删除 a 开始，b 个值,包含 a. 再插入…</li>
 </ul>
+<hr>
+<h2 id="EventLoop"><a href="#EventLoop" class="headerlink" title="EventLoop"></a>EventLoop</h2><h3 id="event-loop-主要为三个部分，主线程，宏队列，微队列。"><a href="#event-loop-主要为三个部分，主线程，宏队列，微队列。" class="headerlink" title="event loop 主要为三个部分，主线程，宏队列，微队列。"></a>event loop 主要为三个部分，主线程，宏队列，微队列。</h3><h3 id="宏队列：settimeout-setImmediate、I-O、UI-rendering。"><a href="#宏队列：settimeout-setImmediate、I-O、UI-rendering。" class="headerlink" title="宏队列：settimeout/setImmediate、I/O、UI rendering。"></a>宏队列：settimeout/setImmediate、I/O、UI rendering。</h3><h3 id="微队列：promise-then、process-nextTick"><a href="#微队列：promise-then、process-nextTick" class="headerlink" title="微队列：promise.then、process.nextTick"></a>微队列：promise.then、process.nextTick</h3><h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><ol>
+<li><p>先执行主线程</p>
+</li>
+<li><p>遇到宏队列（macrotask）放到宏队列（macrotask）</p>
+</li>
+<li><p>遇到微队列（microtask）放到微队列（microtask）</p>
+</li>
+<li><p>主线程执行完毕</p>
+</li>
+<li><p>执行微队列（microtask），微队列（microtask）执行完毕</p>
+</li>
+<li><p>执行一次宏队列（macrotask）中的一个任务，执行完毕</p>
+</li>
+<li><p>执行微队列（microtask），执行完毕</p>
+</li>
+<li><p>依次循环</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line">process.nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(8)</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(9)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(2)</span><br><span class="line">  new Promise(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(11)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">requestIdleCallback(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(7)</span><br><span class="line">&#125;)&#x2F;&#x2F; 特殊说明： new Promise（）属于主线程任务</span><br><span class="line">let promise &#x3D; new Promise((resolve,reject) &#x3D;&gt; &#123;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(10)</span><br><span class="line">  &#125;)</span><br><span class="line">  resolve()  &#x2F;&#x2F; 这个console也属于主线程任务</span><br><span class="line">  console.log(4)</span><br><span class="line">&#125;)</span><br><span class="line">fn()</span><br><span class="line">console.log(3)</span><br><span class="line">promise.then(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(12)</span><br><span class="line">&#125;)</span><br><span class="line">function fn()&#123;</span><br><span class="line">  console.log(6)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log: 1 4 6 3 12 8 2 11 10 9 7</span><br></pre></td></tr></table></figure>
 
       
     </div>
