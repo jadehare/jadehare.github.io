@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="JFASx375m9z43PvUJpUVViVtH3CLi9XPe2dS5nIjCQw" />
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -173,7 +174,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -210,6 +211,77 @@
 
         <div class="content index posts-expand">
           
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/16/DirectX12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/16/DirectX12/" class="post-title-link" itemprop="url">DirectX12</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-02-16 16:29:04 / Modified: 16:41:55" itemprop="dateCreated datePublished" datetime="2021-02-16T16:29:04+08:00">2021-02-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="《DirectX12-3D-游戏开发实战》"><a href="#《DirectX12-3D-游戏开发实战》" class="headerlink" title="《DirectX12 3D 游戏开发实战》"></a>《DirectX12 3D 游戏开发实战》</h1><h2 id="Q-amp-S"><a href="#Q-amp-S" class="headerlink" title="Q&amp;S"></a>Q&amp;S</h2><hr>
+<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><ul>
+<li><p>“HANDLE CreateEventExW(LPSECURITY_ATTRIBUTES,LPCWSTR,DWORD,DWORD)”: 无法将参数 2 从“bool”转换为“LPCWSTR” DirectX12\Common\d3dApp.cpp    535</p>
+<ul>
+<li>VS2019 报错，将 CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS); 第二个参数false改为nullptr;</li>
+</ul>
+</li>
+<li><p>LNK2019    无法解析的外部符号 _main，函数 “int __cdecl invoke_main(void)” (?invoke_main@@YAHXZ) 中引用了该符号    DirectX12\D3DCommon\MSVCRTD.lib(exe_main.obj)</p>
+<ul>
+<li>初始化时没有将项目设置为桌面应用程序，右键项目-&gt; 属性 -&gt; 配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义中将_CONSOLE 改为 _WINDOWS；../-&gt; 链接器 -&gt; 系统 -&gt; 子系统改为”窗口 (/SUBSYSTEM:WINDOWS)”</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
