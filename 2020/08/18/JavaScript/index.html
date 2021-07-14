@@ -23,15 +23,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="类型 声明对象 object：12let person &#x3D; new Object()let person &#x3D; &amp;#123;&amp;#125; Array:12let arr &#x3D; new Array()let arr &#x3D; &amp;#123;&amp;#125;       检测类型 typeof  “undefined” “boolean” “string” “number” “">
+  <meta name="description" content="类型 声明对象 object：12let person &#x3D; new Object()let person &#x3D; &amp;#123;&amp;#125; Array:12let arr &#x3D; new Array()let arr &#x3D; &amp;#123;&amp;#125;       检测类型 基础数据类型  undefined,null,boolean,number,string,symb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript">
 <meta property="og:url" content="http://yoursite.com/2020/08/18/JavaScript/index.html">
 <meta property="og:site_name" content="狗蛋">
-<meta property="og:description" content="类型 声明对象 object：12let person &#x3D; new Object()let person &#x3D; &amp;#123;&amp;#125; Array:12let arr &#x3D; new Array()let arr &#x3D; &amp;#123;&amp;#125;       检测类型 typeof  “undefined” “boolean” “string” “number” “">
+<meta property="og:description" content="类型 声明对象 object：12let person &#x3D; new Object()let person &#x3D; &amp;#123;&amp;#125; Array:12let arr &#x3D; new Array()let arr &#x3D; &amp;#123;&amp;#125;       检测类型 基础数据类型  undefined,null,boolean,number,string,symb">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-18T07:06:14.000Z">
-<meta property="article:modified_time" content="2021-01-17T13:03:07.371Z">
+<meta property="article:modified_time" content="2021-07-14T14:44:19.806Z">
 <meta property="article:author" content="jadehare">
 <meta name="twitter:card" content="summary">
 
@@ -166,7 +166,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测类型"><span class="nav-number">2.</span> <span class="nav-text">检测类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现重载"><span class="nav-number">3.</span> <span class="nav-text">实现重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作"><span class="nav-number">4.</span> <span class="nav-text">数组操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">栈操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列操作"><span class="nav-number">4.0.2.</span> <span class="nav-text">队列操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作数组"><span class="nav-number">4.0.3.</span> <span class="nav-text">操作数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EventLoop"><span class="nav-number">5.</span> <span class="nav-text">EventLoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#event-loop-主要为三个部分，主线程，宏队列，微队列。"><span class="nav-number">5.1.</span> <span class="nav-text">event loop 主要为三个部分，主线程，宏队列，微队列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏队列：settimeout-setImmediate、I-O、UI-rendering。"><span class="nav-number">5.2.</span> <span class="nav-text">宏队列：settimeout&#x2F;setImmediate、I&#x2F;O、UI rendering。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微队列：promise-then、process-nextTick"><span class="nav-number">5.3.</span> <span class="nav-text">微队列：promise.then、process.nextTick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行顺序"><span class="nav-number">5.4.</span> <span class="nav-text">执行顺序</span></a></li></ol></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型"><span class="nav-number">1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测类型"><span class="nav-number">2.</span> <span class="nav-text">检测类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现重载"><span class="nav-number">3.</span> <span class="nav-text">实现重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作"><span class="nav-number">4.</span> <span class="nav-text">数组操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈操作"><span class="nav-number">4.0.1.</span> <span class="nav-text">栈操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列操作"><span class="nav-number">4.0.2.</span> <span class="nav-text">队列操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作数组"><span class="nav-number">4.0.3.</span> <span class="nav-text">操作数组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EventLoop"><span class="nav-number">5.</span> <span class="nav-text">EventLoop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#event-loop-主要为三个部分，主线程，宏队列，微队列。"><span class="nav-number">5.1.</span> <span class="nav-text">event loop 主要为三个部分，主线程，宏队列，微队列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏队列：settimeout-setImmediate、I-O、UI-rendering。"><span class="nav-number">5.2.</span> <span class="nav-text">宏队列：settimeout&#x2F;setImmediate、I&#x2F;O、UI rendering。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微队列：promise-then、process-nextTick"><span class="nav-number">5.3.</span> <span class="nav-text">微队列：promise.then、process.nextTick</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行顺序"><span class="nav-number">5.4.</span> <span class="nav-text">执行顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-bind-apply"><span class="nav-number">6.</span> <span class="nav-text">call() bind() apply()</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-17 21:03:07" itemprop="dateModified" datetime="2021-01-17T21:03:07+08:00">2021-01-17</time>
+                <time title="Modified: 2021-07-14 22:44:19" itemprop="dateModified" datetime="2021-07-14T22:44:19+08:00">2021-07-14</time>
               </span>
 
           
@@ -276,6 +276,16 @@
 </ul>
 <hr>
 <h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><ul>
+<li><p>基础数据类型</p>
+<ul>
+<li>undefined,null,boolean,number,string,symbol</li>
+</ul>
+</li>
+<li><p>引用数据类型</p>
+<ul>
+<li>object</li>
+</ul>
+</li>
 <li><p>typeof</p>
 <ul>
 <li>“undefined”</li>
@@ -341,6 +351,8 @@
 </li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line">process.nextTick(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(8)</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(9)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(2)</span><br><span class="line">  new Promise(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(11)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">requestIdleCallback(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(7)</span><br><span class="line">&#125;)&#x2F;&#x2F; 特殊说明： new Promise（）属于主线程任务</span><br><span class="line">let promise &#x3D; new Promise((resolve,reject) &#x3D;&gt; &#123;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    console.log(10)</span><br><span class="line">  &#125;)</span><br><span class="line">  resolve()  &#x2F;&#x2F; 这个console也属于主线程任务</span><br><span class="line">  console.log(4)</span><br><span class="line">&#125;)</span><br><span class="line">fn()</span><br><span class="line">console.log(3)</span><br><span class="line">promise.then(() &#x3D;&gt; &#123;</span><br><span class="line">  console.log(12)</span><br><span class="line">&#125;)</span><br><span class="line">function fn()&#123;</span><br><span class="line">  console.log(6)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log: 1 4 6 3 12 8 2 11 10 9 7</span><br></pre></td></tr></table></figure>
+
+<h2 id="call-bind-apply"><a href="#call-bind-apply" class="headerlink" title="call() bind() apply()"></a>call() bind() apply()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">let C &#x3D; &#123;</span><br><span class="line">  bName: &quot;bName&quot;,</span><br><span class="line">  func: function (a, b, c) &#123;</span><br><span class="line">    console.log(&quot;func&quot;, this.bName, a, b, c);</span><br><span class="line">  &#125;,</span><br><span class="line">  func1: () &#x3D;&gt; &#123;</span><br><span class="line">    console.log(&quot;func1&quot;, this.bName);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">this.bName &#x3D; &quot;gName&quot;;</span><br><span class="line"></span><br><span class="line">C.func(1, 2);</span><br><span class="line">C.func1();</span><br><span class="line">C.func.call(this, 1, 2, 3);</span><br><span class="line"></span><br><span class="line">let f &#x3D; C.func.bind(C, 1);</span><br><span class="line">let f1 &#x3D; C.func;</span><br><span class="line">let f2 &#x3D; C.func1;</span><br><span class="line"></span><br><span class="line">f(4);</span><br><span class="line">f1(1, 2, 3);</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure>
 
     </div>
 
