@@ -1,0 +1,83 @@
+
+dice.png
+size: 293,787
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dice/1
+  rotate: false
+  xy: 175, 669
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+dice/2
+  rotate: false
+  xy: 175, 551
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+dice/3
+  rotate: false
+  xy: 175, 433
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+dice/4
+  rotate: false
+  xy: 175, 315
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+dice/5
+  rotate: false
+  xy: 175, 197
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+dice/6
+  rotate: false
+  xy: 175, 80
+  size: 116, 115
+  orig: 116, 115
+  offset: 0, 0
+  index: -1
+dice/dice1
+  rotate: true
+  xy: 2, 630
+  size: 155, 171
+  orig: 155, 171
+  offset: 0, 0
+  index: -1
+dice/dice2
+  rotate: true
+  xy: 2, 473
+  size: 155, 171
+  orig: 155, 171
+  offset: 0, 0
+  index: -1
+dice/dice3
+  rotate: true
+  xy: 2, 316
+  size: 155, 171
+  orig: 155, 171
+  offset: 0, 0
+  index: -1
+dice/dice4
+  rotate: true
+  xy: 2, 159
+  size: 155, 171
+  orig: 155, 171
+  offset: 0, 0
+  index: -1
+dice/dice5
+  rotate: true
+  xy: 2, 2
+  size: 155, 171
+  orig: 155, 171
+  offset: 0, 0
+  index: -1
