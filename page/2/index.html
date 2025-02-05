@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -149,6 +149,165 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/18/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/18/JavaScript/" class="post-title-link" itemprop="url">JavaScript</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-18 15:06:14" itemprop="dateCreated datePublished" datetime="2020-08-18T15:06:14+08:00">2020-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><ul>
+<li>声明对象<ul>
+<li>object：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let person = new Object()</span><br><span class="line">let person = &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Array:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr = new Array()</span><br><span class="line">let arr = &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><ul>
+<li><p>基础数据类型</p>
+<ul>
+<li>undefined,null,boolean,number,string,symbol</li>
+</ul>
+</li>
+<li><p>引用数据类型</p>
+<ul>
+<li>object</li>
+</ul>
+</li>
+<li><p>typeof</p>
+<ul>
+<li>“undefined”</li>
+<li>“boolean”</li>
+<li>“string”</li>
+<li>“number”</li>
+<li>“object” 对象或者 null</li>
+<li>“function”</li>
+</ul>
+</li>
+<li><p>引用类型</p>
+<ul>
+<li>instanceof</li>
+</ul>
+</li>
+<li><p>检测数组</p>
+<ul>
+<li>Array.isArray()</li>
+</ul>
+</li>
+<li><p>检测类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h2 id="实现重载"><a href="#实现重载" class="headerlink" title="实现重载"></a>实现重载</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">addMethod</span>(<span class="params">obj,name,func</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> old = obj[name];</span><br><span class="line">    obj[name] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="variable language_">arguments</span>.<span class="property">length</span> === func.<span class="property">length</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> func.<span class="title function_">apply</span>(<span class="variable language_">this</span>,<span class="variable language_">arguments</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> old === <span class="string">&quot;function&quot;</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> old.<span class="title function_">apply</span>(<span class="variable language_">this</span>,<span class="variable language_">arguments</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h2><ul>
+<li>push() 推入数组末尾</li>
+<li>pop() 从数组末尾取出</li>
+<li>unshift() 数组前端添加</li>
+<li>shift() 数组前端取出</li>
+</ul>
+<h4 id="栈操作"><a href="#栈操作" class="headerlink" title="栈操作"></a>栈操作</h4><ul>
+<li>push() 推入 pop()取出</li>
+</ul>
+<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4><ul>
+<li>push() 推入 shift()取出</li>
+</ul>
+<h4 id="操作数组"><a href="#操作数组" class="headerlink" title="操作数组"></a>操作数组</h4><ul>
+<li>slice(a,b) 返回 a-b 之间的值,含 a 不含 b</li>
+<li>splice(a,b,…) 删除 a 开始，b 个值,包含 a. 再插入…</li>
+</ul>
+<hr>
+<h2 id="EventLoop"><a href="#EventLoop" class="headerlink" title="EventLoop"></a>EventLoop</h2><h3 id="event-loop-主要为三个部分，主线程，宏队列，微队列。"><a href="#event-loop-主要为三个部分，主线程，宏队列，微队列。" class="headerlink" title="event loop 主要为三个部分，主线程，宏队列，微队列。"></a>event loop 主要为三个部分，主线程，宏队列，微队列。</h3><h3 id="宏队列：settimeout-setImmediate、I-O、UI-rendering。"><a href="#宏队列：settimeout-setImmediate、I-O、UI-rendering。" class="headerlink" title="宏队列：settimeout&#x2F;setImmediate、I&#x2F;O、UI rendering。"></a>宏队列：settimeout&#x2F;setImmediate、I&#x2F;O、UI rendering。</h3><h3 id="微队列：promise-then、process-nextTick"><a href="#微队列：promise-then、process-nextTick" class="headerlink" title="微队列：promise.then、process.nextTick"></a>微队列：promise.then、process.nextTick</h3><h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><ol>
+<li><p>先执行主线程</p>
+</li>
+<li><p>遇到宏队列（macrotask）放到宏队列（macrotask）</p>
+</li>
+<li><p>遇到微队列（microtask）放到微队列（microtask）</p>
+</li>
+<li><p>主线程执行完毕</p>
+</li>
+<li><p>执行微队列（microtask），微队列（microtask）执行完毕</p>
+</li>
+<li><p>执行一次宏队列（macrotask）中的一个任务，执行完毕</p>
+</li>
+<li><p>执行微队列（microtask），执行完毕</p>
+</li>
+<li><p>依次循环</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line">process.nextTick(() =&gt; &#123;</span><br><span class="line">  console.log(8)</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(9)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log(2)</span><br><span class="line">  new Promise(() =&gt; &#123;</span><br><span class="line">    console.log(11)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">requestIdleCallback(() =&gt; &#123;</span><br><span class="line">  console.log(7)</span><br><span class="line">&#125;)// 特殊说明： new Promise（）属于主线程任务</span><br><span class="line">let promise = new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(10)</span><br><span class="line">  &#125;)</span><br><span class="line">  resolve()  // 这个console也属于主线程任务</span><br><span class="line">  console.log(4)</span><br><span class="line">&#125;)</span><br><span class="line">fn()</span><br><span class="line">console.log(3)</span><br><span class="line">promise.then(() =&gt; &#123;</span><br><span class="line">  console.log(12)</span><br><span class="line">&#125;)</span><br><span class="line">function fn()&#123;</span><br><span class="line">  console.log(6)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log: 1 4 6 3 12 8 2 11 10 9 7</span><br></pre></td></tr></table></figure>
+
+<h2 id="call-bind-apply"><a href="#call-bind-apply" class="headerlink" title="call() bind() apply()"></a>call() bind() apply()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">let C = &#123;</span><br><span class="line">  bName: &quot;bName&quot;,</span><br><span class="line">  func: function (a, b, c) &#123;</span><br><span class="line">    console.log(&quot;func&quot;, this.bName, a, b, c);</span><br><span class="line">  &#125;,</span><br><span class="line">  func1: () =&gt; &#123;</span><br><span class="line">    console.log(&quot;func1&quot;, this.bName);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">this.bName = &quot;gName&quot;;</span><br><span class="line"></span><br><span class="line">C.func(1, 2);</span><br><span class="line">C.func1();</span><br><span class="line">C.func.call(this, 1, 2, 3);</span><br><span class="line"></span><br><span class="line">let f = C.func.bind(C, 1);</span><br><span class="line">let f1 = C.func;</span><br><span class="line">let f2 = C.func1;</span><br><span class="line"></span><br><span class="line">f(4);</span><br><span class="line">f1(1, 2, 3);</span><br><span class="line">f2();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
