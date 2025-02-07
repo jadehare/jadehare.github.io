@@ -359,7 +359,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-06 18:45:47" itemprop="dateModified" datetime="2025-02-06T18:45:47+08:00">2025-02-06</time>
+      <time title="Modified: 2025-02-07 18:46:00" itemprop="dateModified" datetime="2025-02-07T18:46:00+08:00">2025-02-07</time>
     </span>
 
   
@@ -374,8 +374,8 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
 <ul>
-<li>通用类型声明最好放一块，便于查找，避免定义过多重复类型。</li>
-<li>单独类型放入各自目录下，避免于通用类型声明混淆。</li>
+<li>通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。</li>
+<li>单独类型放入各自目录下, 避免于通用类型声明混淆。</li>
 </ul>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scripts/</span><br><span class="line">├── interfaces/ --&gt;接口</span><br><span class="line">│   ├── IUser.ts</span><br><span class="line">│   └── IReward.ts</span><br><span class="line">├── activities/activity/   --&gt;某单独活动</span><br><span class="line">│   └── interfaces/</span><br><span class="line">│       └── IActivity.ts</span><br></pre></td></tr></table></figure>
@@ -386,8 +386,8 @@
 <li>松散耦合</li>
 <li>可扩展性</li>
 <li>可重用性</li>
-<li>高扇入 （大量的类使用给定的类，例如工具类）</li>
-<li>低扇出 （一个类适中地使用其他类）</li>
+<li>高扇入 (大量的类使用给定的类, 例如工具类)</li>
+<li>低扇出 (一个类适中地使用其他类)</li>
 <li>可移植性</li>
 <li>精简性</li>
 <li>层次性</li>
