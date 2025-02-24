@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -149,6 +149,82 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/24/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/24/git/" class="post-title-link" itemprop="url">git</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-02-24 12:06:22 / Modified: 12:22:03" itemprop="dateCreated datePublished" datetime="2025-02-24T12:06:22+08:00">2025-02-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><p>查看 ts 文件增删记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">authorName=$(git config user.name);git log --all --author=&quot;$&#123;authorName&#125;&quot; --since=2025-02-13 --until=&quot;2025-02-18 23:59:59&quot; --pretty=tformat: --numstat | awk &#x27;$3 ~ /\.ts$/ &#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看所有提交记录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date=&quot;2025-02-20&quot;;authorName=$(git config user.name);git log --source --all --author=&quot;$&#123;authorName&#125;&quot; --since=&quot;$&#123;date&#125;&quot; --until=&quot;$&#123;date&#125; 23:59:59&quot; --oneline --graph --decorate</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -935,94 +1011,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h1><p>  构造用explicit声明，防止非必要的隐式转换</p>
 <h1 id="reference"><a href="#reference" class="headerlink" title="reference &amp;"></a>reference &amp;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val = 1024;</span><br><span class="line">    int &amp;refVal = ival;</span><br><span class="line"></span><br><span class="line">    int ii = val;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    val = 1025;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    refVal = 1026;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 1024  1024  1024</span><br><span class="line">// 1025  1025  1024</span><br><span class="line">// 1026  1026  1024</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/DirectX12/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/16/DirectX12/" class="post-title-link" itemprop="url">DirectX12</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-16 16:29:04" itemprop="dateCreated datePublished" datetime="2021-02-16T16:29:04+08:00">2021-02-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="《DirectX12-3D-游戏开发实战》"><a href="#《DirectX12-3D-游戏开发实战》" class="headerlink" title="《DirectX12 3D 游戏开发实战》"></a>《DirectX12 3D 游戏开发实战》</h1><h2 id="Q-S"><a href="#Q-S" class="headerlink" title="Q&amp;S"></a>Q&amp;S</h2><hr>
-<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><ul>
-<li><p>“HANDLE CreateEventExW(LPSECURITY_ATTRIBUTES,LPCWSTR,DWORD,DWORD)”: 无法将参数 2 从“bool”转换为“LPCWSTR” DirectX12\Common\d3dApp.cpp	535</p>
-<ul>
-<li>VS2019 报错，将 CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS); 第二个参数false改为nullptr;</li>
-</ul>
-</li>
-<li><p>LNK2019	无法解析的外部符号 _main，函数 “int __cdecl invoke_main(void)” (?invoke_main@@YAHXZ) 中引用了该符号	DirectX12\D3DCommon\MSVCRTD.lib(exe_main.obj)</p>
-<ul>
-<li>初始化时没有将项目设置为桌面应用程序，右键项目-&gt; 属性 -&gt; 配置属性 -&gt; C&#x2F;C++ -&gt; 预处理器 -&gt; 预处理器定义中将_CONSOLE 改为 _WINDOWS；..&#x2F;-&gt; 链接器 -&gt; 系统 -&gt; 子系统改为”窗口 (&#x2F;SUBSYSTEM:WINDOWS)”</li>
-</ul>
-</li>
-</ul>
-
       
     </div>
 

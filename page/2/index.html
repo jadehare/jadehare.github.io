@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -149,6 +149,94 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/DirectX12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/16/DirectX12/" class="post-title-link" itemprop="url">DirectX12</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-16 16:29:04" itemprop="dateCreated datePublished" datetime="2021-02-16T16:29:04+08:00">2021-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="《DirectX12-3D-游戏开发实战》"><a href="#《DirectX12-3D-游戏开发实战》" class="headerlink" title="《DirectX12 3D 游戏开发实战》"></a>《DirectX12 3D 游戏开发实战》</h1><h2 id="Q-S"><a href="#Q-S" class="headerlink" title="Q&amp;S"></a>Q&amp;S</h2><hr>
+<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><ul>
+<li><p>“HANDLE CreateEventExW(LPSECURITY_ATTRIBUTES,LPCWSTR,DWORD,DWORD)”: 无法将参数 2 从“bool”转换为“LPCWSTR” DirectX12\Common\d3dApp.cpp	535</p>
+<ul>
+<li>VS2019 报错，将 CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS); 第二个参数false改为nullptr;</li>
+</ul>
+</li>
+<li><p>LNK2019	无法解析的外部符号 _main，函数 “int __cdecl invoke_main(void)” (?invoke_main@@YAHXZ) 中引用了该符号	DirectX12\D3DCommon\MSVCRTD.lib(exe_main.obj)</p>
+<ul>
+<li>初始化时没有将项目设置为桌面应用程序，右键项目-&gt; 属性 -&gt; 配置属性 -&gt; C&#x2F;C++ -&gt; 预处理器 -&gt; 预处理器定义中将_CONSOLE 改为 _WINDOWS；..&#x2F;-&gt; 链接器 -&gt; 系统 -&gt; 子系统改为”窗口 (&#x2F;SUBSYSTEM:WINDOWS)”</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
