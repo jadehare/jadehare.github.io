@@ -262,9 +262,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-02-21 14:33:04 / Modified: 14:36:45" itemprop="dateCreated datePublished" datetime="2025-02-21T14:33:04+08:00">2025-02-21</time>
+      <time title="Created: 2025-02-21 14:33:04" itemprop="dateCreated datePublished" datetime="2025-02-21T14:33:04+08:00">2025-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-24 15:54:52" itemprop="dateModified" datetime="2025-02-24T15:54:52+08:00">2025-02-24</time>
     </span>
 
   
@@ -278,8 +284,8 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><ul>
-<li><p>rvm 安装ruby报错。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">brew install ruby</span><br><span class="line">// 查看自己安装的是哪个版本</span><br><span class="line">rvm mount /usr/local/Cellar/ruby/3.4.2</span><br><span class="line">// mount命令好像会让你自己起名，没起直接用默认的了。</span><br><span class="line">// rvm list查看名字</span><br><span class="line">rvm use ext-ruby-3.4.2-rd2930f8e7a</span><br></pre></td></tr></table></figure>
+<li><p>rvm 安装 ruby 报错。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">brew install ruby</span><br><span class="line">// 查看自己安装的是哪个版本</span><br><span class="line"></span><br><span class="line">rvm mount /usr/local/Cellar/ruby/3.4.2</span><br><span class="line">// mount命令好像会让你自己起名，没起直接用默认的了。</span><br><span class="line"></span><br><span class="line">// rvm list查看名字</span><br><span class="line">rvm use ext-ruby-3.4.2-rd2930f8e7a --default</span><br><span class="line"></span><br><span class="line">// use后环境可能有问题，重登shell ruby依然使用的系统ruby，直接重装rvm</span><br><span class="line">rvm get stable --auto-dotfiles</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>rvm 安装警告，乱七八糟的问题。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 直接重装</span><br><span class="line">rvm implode</span><br><span class="line">\curl -sSL https://get.rvm.io | bash</span><br><span class="line">source ~/.rvm/scripts/rvm</span><br></pre></td></tr></table></figure></li>
