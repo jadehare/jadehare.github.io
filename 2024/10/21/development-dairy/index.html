@@ -19,17 +19,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="开发日记目录结构定义类型声明  通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。 单独类型放入各自目录下, 避免于通用类型声明混淆。   1234567scripts&#x2F;├── interfaces&#x2F; --&gt;接口│   ├── IUser.ts│   └── IReward.ts├── activities&#x2F;activity&#x2F;   --&gt;某单独活动│   └── interf">
+    <meta name="description" content="开发日记项目管理 确定需求时直接判断是否大量复用，拆分成公用组件。  目录结构定义类型声明  通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。 单独类型放入各自目录下, 避免于通用类型声明混淆。   1234567scripts&#x2F;├── interfaces&#x2F; --&gt;接口│   ├── IUser.ts│   └── IReward.ts├── activities&#x2F;activi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Development Dairy">
 <meta property="og:url" content="http://example.com/2024/10/21/development-dairy/index.html">
 <meta property="og:site_name" content="狗蛋">
-<meta property="og:description" content="开发日记目录结构定义类型声明  通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。 单独类型放入各自目录下, 避免于通用类型声明混淆。   1234567scripts&#x2F;├── interfaces&#x2F; --&gt;接口│   ├── IUser.ts│   └── IReward.ts├── activities&#x2F;activity&#x2F;   --&gt;某单独活动│   └── interf">
+<meta property="og:description" content="开发日记项目管理 确定需求时直接判断是否大量复用，拆分成公用组件。  目录结构定义类型声明  通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。 单独类型放入各自目录下, 避免于通用类型声明混淆。   1234567scripts&#x2F;├── interfaces&#x2F; --&gt;接口│   ├── IUser.ts│   └── IReward.ts├── activities&#x2F;activi">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/development-dairy/codeFactor.png">
 <meta property="article:published_time" content="2024-10-21T07:05:06.000Z">
-<meta property="article:modified_time" content="2025-02-18T10:46:37.540Z">
+<meta property="article:modified_time" content="2025-04-09T10:38:39.487Z">
 <meta property="article:author" content="jadehare">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/development-dairy/codeFactor.png">
 
 
 <link rel="canonical" href="http://example.com/2024/10/21/development-dairy/">
@@ -119,7 +121,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">开发日记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义类型声明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8"><span class="nav-number">2.</span> <span class="nav-text">代码大全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%84%E5%BB%BA%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">软件构建中的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码设计基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E5%AD%90%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1%E8%A7%84%E5%88%99"><span class="nav-number">2.1.2.</span> <span class="nav-text">规范子系统通信规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">2.1.3.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Eslint"><span class="nav-number">2.1.4.</span> <span class="nav-text">配置 Eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83"><span class="nav-number">2.1.5.</span> <span class="nav-text">文件目录规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E8%AF%AD%E4%B9%89%E8%80%A6%E5%90%88"><span class="nav-number">2.1.6.</span> <span class="nav-text">避免语义耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%86%9F%E7%BB%83%E6%8E%8C%E6%8F%A1%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.7.</span> <span class="nav-text">熟练掌握常用设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%9C"><span class="nav-number">2.1.8.</span> <span class="nav-text">记录设计结果:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADT-abstract-data-type"><span class="nav-number">2.2.1.</span> <span class="nav-text">ADT (abstract data type)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-number">2.2.2.</span> <span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">2.2.3.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.4.</span> <span class="nav-text">类的设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83"><span class="nav-number">2.3.2.</span> <span class="nav-text">规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">防御编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-number">2.4.1.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF"><span class="nav-number">2.4.2.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug-%E5%BC%80%E5%8F%91"><span class="nav-number">2.4.3.</span> <span class="nav-text">debug 开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Typescript"><span class="nav-number">2.5.1.</span> <span class="nav-text">Typescript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D-1"><span class="nav-number">2.5.2.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83-1"><span class="nav-number">2.5.3.</span> <span class="nav-text">规范</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">开发日记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">项目管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义类型声明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8"><span class="nav-number">2.</span> <span class="nav-text">代码大全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%84%E5%BB%BA%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">软件构建中的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码设计基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E5%AD%90%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1%E8%A7%84%E5%88%99"><span class="nav-number">2.1.2.</span> <span class="nav-text">规范子系统通信规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">2.1.3.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Eslint"><span class="nav-number">2.1.4.</span> <span class="nav-text">配置 Eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83"><span class="nav-number">2.1.5.</span> <span class="nav-text">文件目录规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E8%AF%AD%E4%B9%89%E8%80%A6%E5%90%88"><span class="nav-number">2.1.6.</span> <span class="nav-text">避免语义耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%86%9F%E7%BB%83%E6%8E%8C%E6%8F%A1%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.7.</span> <span class="nav-text">熟练掌握常用设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%9C"><span class="nav-number">2.1.8.</span> <span class="nav-text">记录设计结果:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADT-abstract-data-type"><span class="nav-number">2.2.1.</span> <span class="nav-text">ADT (abstract data type)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-number">2.2.2.</span> <span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">2.2.3.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.4.</span> <span class="nav-text">类的设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83"><span class="nav-number">2.3.2.</span> <span class="nav-text">规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">防御编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-number">2.4.1.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF"><span class="nav-number">2.4.2.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug-%E5%BC%80%E5%8F%91"><span class="nav-number">2.4.3.</span> <span class="nav-text">debug 开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Typescript"><span class="nav-number">2.5.1.</span> <span class="nav-text">Typescript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D-1"><span class="nav-number">2.5.2.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83-1"><span class="nav-number">2.5.3.</span> <span class="nav-text">规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F"><span class="nav-number">2.6.</span> <span class="nav-text">软件质量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E6%B5%8B%E8%AF%95"><span class="nav-number">2.6.1.</span> <span class="nav-text">开发者测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debugger"><span class="nav-number">2.7.</span> <span class="nav-text">Debugger</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E5%AD%A6%E8%B0%83%E8%AF%95"><span class="nav-number">2.7.1.</span> <span class="nav-text">科学调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%BC%BA%E9%99%B7"><span class="nav-number">2.7.2.</span> <span class="nav-text">修改缺陷</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%9E%84"><span class="nav-number">2.8.</span> <span class="nav-text">重构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.8.1.</span> <span class="nav-text">需要代码重构的情况</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -200,7 +202,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-18 18:46:37" itemprop="dateModified" datetime="2025-02-18T18:46:37+08:00">2025-02-18</time>
+      <time title="Modified: 2025-04-09 18:38:39" itemprop="dateModified" datetime="2025-04-09T18:38:39+08:00">2025-04-09</time>
     </span>
 
   
@@ -212,7 +214,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
+    <div class="post-body" itemprop="articleBody"><h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
+<li>确定需求时直接判断是否大量复用，拆分成公用组件。</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
 <ul>
 <li>通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。</li>
 <li>单独类型放入各自目录下, 避免于通用类型声明混淆。</li>
@@ -392,13 +397,101 @@
 </li>
 <li><p>过度声明</p>
 <blockquote>
-<p>bool值可以考虑使用数字类型, 后续开发有可能状态会变为多个的情况。</p>
+<p>bool 值可以考虑使用数字类型, 后续开发有可能状态会变为多个的情况。</p>
 </blockquote>
 </li>
-<li><p>禁止使用var, 使用const 和let。</p>
+<li><p>禁止使用 var, 使用 const 和 let。</p>
 <blockquote>
-<p>eslint 配置自动将未重新赋值let改为const。还能确保变量一定初始化。就是后续要再修改的时候还得回去改成let确实有点烦了。</p>
+<p>eslint 配置自动将未重新赋值 let 改为 const。还能确保变量一定初始化。就是后续要再修改的时候还得回去改成 let 确实有点烦了。</p>
 </blockquote>
+</li>
+</ul>
+<h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><ul>
+<li><p>代码特性之间的影响<br><img src="/../img/development-dairy/codeFactor.png" alt="avatar"></p>
+</li>
+<li><p>代码缺陷检出</p>
+<blockquote>
+<p>代码检查比测试成本低效果好，要养成阅读代码的习惯，自检设计，自检代码。</p>
+</blockquote>
+<ul>
+<li>非正式设计复查 （小团队）</li>
+<li>正式设计检查 （强制流程审查）</li>
+<li>非正式代码复查 (code review)</li>
+<li>正式代码检查 (关键模块深度检查)</li>
+<li>建立模型或原型 （验证技术方案可行性）</li>
+<li>个人桌面代码检查 （自查）</li>
+<li>单元测试</li>
+<li>集成测试</li>
+<li>回归测试</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发者测试"><a href="#开发者测试" class="headerlink" title="开发者测试"></a>开发者测试</h3><blockquote>
+<ul>
+<li>测试不会改善软件质量，改善软件质量需要的是更高质量的开发。</li>
+<li>测试目的是找到错误而不是完成流程。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>测试方法</p>
+<ul>
+<li>测试用例</li>
+<li>设计关注点测试</li>
+<li>基础测试+数据流测试</li>
+<li>检查表，记录所有犯错的类型</li>
+</ul>
+</li>
+<li><p>测试注意事项</p>
+<ul>
+<li>尽可能多的满足测试覆盖率。（尽量保证每行代码都被执行了）</li>
+<li>dirty tests 应该是 clean tests 的 25 倍。（只能说尽可能的多吧，测试用例都不一定能写 25 个）<blockquote>
+<ul>
+<li>clean tests: 预期的输入输出。 功能稳定后实现，自动化测试用例确保功能稳定运行。</li>
+<li>dirty tests: 极端,错误数据验证系统处理能力。能够快速试错</li>
+</ul>
+</blockquote>
+</li>
+<li>边界值分析</li>
+</ul>
+</li>
+<li><p>结构化基础测试</p>
+<blockquote>
+<p>测试用例最少数量计算方法，遇到 if while for 等关键字计数+1. 感觉没必要这么多，视代码重要程度而定。算上个系数，一般游戏开发 N _ 0.1， 关键逻辑 N _ 0.5, 代码质量要求极高再直接 N 吧。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><h3 id="科学调试"><a href="#科学调试" class="headerlink" title="科学调试"></a>科学调试</h3><ol>
+<li>确定错误状态，触发错误的具体条件，尽量稳定复现，锁定错误范围。</li>
+<li>收集错误相关数据</li>
+<li>根据相关数据构造导致错误问题的假说</li>
+<li>分析如何证明假说</li>
+<li>实现假说证明是否能够修补，不能则重回 *3.</li>
+<li>测试</li>
+<li>判断是否还有类似错误<blockquote>
+<p>比较关键，改 bug 谁都会改，能多想多思考发现更多问题才是更好的开发。反思问题出现的原因，优化代码逻辑代码结构。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>确定错误后可以添加单元测试避免再次出现相同或者类似的错误。</li>
+<li>实在找不到可以休息一下，说不定啥时候来灵感了。</li>
+</ul>
+<h3 id="修改缺陷"><a href="#修改缺陷" class="headerlink" title="修改缺陷"></a>修改缺陷</h3><ul>
+<li>修改代码前要确保理解问题和相关程序。</li>
+<li>修改后一定要测试，不管多小的改动。</li>
+<li>治本，理解错误最根本的，不要治标不治本</li>
+</ul>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><h3 id="需要代码重构的情况"><a href="#需要代码重构的情况" class="headerlink" title="需要代码重构的情况"></a>需要代码重构的情况</h3><ul>
+<li>代码重复<blockquote>
+<p>编写过程中就要避免，如果有重复代码就要抽象出来避免重复，哪怕只有两段重复）</p>
+</blockquote>
+</li>
+<li>冗长的子程序<blockquote>
+<p>编写过程中就要避免</p>
+</blockquote>
+<ul>
+<li>循环过长或嵌套过深</li>
+</ul>
 </li>
 </ul>
 
