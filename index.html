@@ -158,7 +158,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/24/git/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/03/shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/24/git/" class="post-title-link" itemprop="url">git</a>
+          <a href="/2025/06/03/shell/" class="post-title-link" itemprop="url">shell</a>
         </h2>
 
         <div class="post-meta-container">
@@ -188,7 +188,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-02-24 12:06:22 / Modified: 12:22:03" itemprop="dateCreated datePublished" datetime="2025-02-24T12:06:22+08:00">2025-02-24</time>
+      <time title="Created: 2025-06-03 14:26:10 / Modified: 14:32:33" itemprop="dateCreated datePublished" datetime="2025-06-03T14:26:10+08:00">2025-06-03</time>
     </span>
 
   
@@ -201,12 +201,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ul>
+          <h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
 <li><p>查看 ts 文件增删记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">authorName=$(git config user.name);git log --all --author=&quot;$&#123;authorName&#125;&quot; --since=2025-02-13 --until=&quot;2025-02-18 23:59:59&quot; --pretty=tformat: --numstat | awk &#x27;$3 ~ /\.ts$/ &#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date=&quot;2025-04-29&quot;;authorName=$(git config user.name);git log --all --author=$&#123;authorName&#125; --since=&quot;$&#123;date&#125; 00:00:00&quot; --until=&quot;$&#123;date&#125; 23:59:59&quot; --pretty=tformat: --numstat | awk &#x27;$3 ~ /\.ts$/ &#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看所有提交记录</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date=&quot;2025-02-20&quot;;authorName=$(git config user.name);git log --source --all --author=&quot;$&#123;authorName&#125;&quot; --since=&quot;$&#123;date&#125;&quot; --until=&quot;$&#123;date&#125; 23:59:59&quot; --oneline --graph --decorate</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><ul>
+<li>查看应用内存使用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -axo rss,comm | grep &#x27;Google Chrome&#x27; | awk &#x27;&#123;sum+=$1&#125; END &#123;print sum/1024 &quot; MB&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -648,7 +651,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-09 18:38:39" itemprop="dateModified" datetime="2025-04-09T18:38:39+08:00">2025-04-09</time>
+      <time title="Modified: 2025-04-22 15:57:30" itemprop="dateModified" datetime="2025-04-22T15:57:30+08:00">2025-04-22</time>
     </span>
 
   
@@ -663,6 +666,10 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
 <li>确定需求时直接判断是否大量复用，拆分成公用组件。</li>
+<li>App版本号规范，MAJOR.MINOR.PATCH。<blockquote>
+<p>版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。</p>
+</blockquote>
+</li>
 </ul>
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
 <ul>
