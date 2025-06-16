@@ -626,7 +626,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
+      <time title="Modified: 2025-06-16 14:01:13" itemprop="dateModified" datetime="2025-06-16T14:01:13+08:00">2025-06-16</time>
     </span>
 
   
@@ -640,10 +640,16 @@
     
     <div class="post-body" itemprop="articleBody">
           <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><hr>
-<h3 id="useCapture"><a href="#useCapture" class="headerlink" title="useCapture"></a>useCapture</h3><h2 id="node-on-event-callback-target-useCapture-true-捕获模式，从父节点开始依次捕获事件-false-冒泡模式，从子节点开始依次向父节点冒泡"><a href="#node-on-event-callback-target-useCapture-true-捕获模式，从父节点开始依次捕获事件-false-冒泡模式，从子节点开始依次向父节点冒泡" class="headerlink" title="node.on(event,callback,target,useCapture)- true: 捕获模式，从父节点开始依次捕获事件- false: 冒泡模式，从子节点开始依次向父节点冒泡"></a>node.on(event,callback,target,useCapture)<br>- true: 捕获模式，从父节点开始依次捕获事件<br>- false: 冒泡模式，从子节点开始依次向父节点冒泡</h2><h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><p>node.stopPropagation()</p>
+<h3 id="useCapture"><a href="#useCapture" class="headerlink" title="useCapture"></a>useCapture</h3><p>node.on(event,callback,target,useCapture)</p>
+<ul>
+<li>true: 捕获模式，从父节点开始依次捕获事件</li>
+<li>false: 冒泡模式，从子节点开始依次向父节点冒泡</li>
+</ul>
+<hr>
+<h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><p>node.stopPropagation()</p>
 <ul>
 <li>阻止向父节点冒泡,当前节点其他事件监听依然有效</li>
-<li>useCapture为true时阻止子节点捕获</li>
+<li>useCapture 为 true 时阻止子节点捕获</li>
 </ul>
 <h3 id="swallowTouches"><a href="#swallowTouches" class="headerlink" title="swallowTouches"></a>swallowTouches</h3><ul>
 <li>node._touchListener.setSwallowTouches(args:bool)<ul>
@@ -652,6 +658,7 @@
 </li>
 </ul>
 <hr>
+<h2 id="匀速贝塞尔曲线"><a href="#匀速贝塞尔曲线" class="headerlink" title="匀速贝塞尔曲线"></a>匀速贝塞尔曲线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">bezier(p0: cc.Vec2, p1: cc.Vec2, p2: cc.Vec2, t: number) &#123;</span><br><span class="line">    const p = p0</span><br><span class="line">        .mul(Math.pow(1 - t, 2))</span><br><span class="line">        .add(p1.mul(2 * t * (1 - t)))</span><br><span class="line">        .add(p2.mul(Math.pow(t, 2)));</span><br><span class="line">    return p;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">async bezierUniformMove(pos: cc.Vec2, mid: cc.Vec2, target: cc.Vec2, node: cc.Node, duration: number) &#123;</span><br><span class="line">    let samples: &#123; t: number, len: number &#125;[] = [];</span><br><span class="line">    let totalLen = 0;</span><br><span class="line">    let prev = this.bezier(pos, mid, target, 0);</span><br><span class="line">    for (let i = 1; i &lt;= 100; i++) &#123;</span><br><span class="line">        let t = i / 100;</span><br><span class="line">        let pt = this.bezier(pos, mid, target, t);</span><br><span class="line">        let d = prev.sub(pt).mag();</span><br><span class="line">        totalLen += d;</span><br><span class="line">        samples.push(&#123; t, len: totalLen &#125;);</span><br><span class="line">        prev = pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const getTByLen = (curLen: number) =&gt; &#123;</span><br><span class="line">        for (let i = 0; i &lt; samples.length; i++) &#123;</span><br><span class="line">            if (samples[i].len &gt;= curLen) &#123;</span><br><span class="line">                // 线性插值</span><br><span class="line">                let prev = samples[i - 1] || &#123; t: 0, len: 0 &#125;;</span><br><span class="line">                let ratio = (curLen - prev.len) / (samples[i].len - prev.len);</span><br><span class="line">                return prev.t + (samples[i].t - prev.t) * ratio;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    await asyncMgr.tween(cc.tween(node).to(duration, &#123; position: target &#125;, &#123;</span><br><span class="line">        progress: (start, end, current, ratio) =&gt; &#123;</span><br><span class="line">            const cl = totalLen * ratio;</span><br><span class="line">            const t = getTByLen(cl);</span><br><span class="line">            const result = this.bezier(pos, mid, target, t);</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
