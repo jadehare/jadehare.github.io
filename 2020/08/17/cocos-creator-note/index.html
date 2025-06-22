@@ -17,17 +17,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="事件 useCapturenode.on(event,callback,target,useCapture)- true: 捕获模式，从父节点开始依次捕获事件- false: 冒泡模式，从子节点开始依次向父节点冒泡阻止冒泡node.stopPropagation()  阻止向父节点冒泡,当前节点其他事件监听依然有效 useCapture为true时阻止子节点捕获  swallowTouches n">
+    <meta name="description" content="事件 useCapturenode.on(event,callback,target,useCapture)  true: 捕获模式，从父节点开始依次捕获事件 false: 冒泡模式，从子节点开始依次向父节点冒泡   阻止冒泡node.stopPropagation()  阻止向父节点冒泡,当前节点其他事件监听依然有效 useCapture 为 true 时阻止子节点捕获  swallowTouc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cocos Creator 笔记">
 <meta property="og:url" content="http://example.com/2020/08/17/cocos-creator-note/index.html">
 <meta property="og:site_name" content="狗蛋">
-<meta property="og:description" content="事件 useCapturenode.on(event,callback,target,useCapture)- true: 捕获模式，从父节点开始依次捕获事件- false: 冒泡模式，从子节点开始依次向父节点冒泡阻止冒泡node.stopPropagation()  阻止向父节点冒泡,当前节点其他事件监听依然有效 useCapture为true时阻止子节点捕获  swallowTouches n">
+<meta property="og:description" content="事件 useCapturenode.on(event,callback,target,useCapture)  true: 捕获模式，从父节点开始依次捕获事件 false: 冒泡模式，从子节点开始依次向父节点冒泡   阻止冒泡node.stopPropagation()  阻止向父节点冒泡,当前节点其他事件监听依然有效 useCapture 为 true 时阻止子节点捕获  swallowTouc">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-17T09:21:30.000Z">
-<meta property="article:modified_time" content="2024-06-22T19:18:39.817Z">
+<meta property="article:modified_time" content="2025-06-22T06:24:00.767Z">
 <meta property="article:author" content="jadehare">
 <meta name="twitter:card" content="summary">
 
@@ -53,7 +53,15 @@
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EV0ZB2ZXLY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-EV0ZB2ZXLY');
+</script>
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
@@ -62,6 +70,9 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -82,6 +93,10 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-games"><a href="/games/" rel="section"><i class="fa fa-gamepad fa-fw"></i>games</a></li>
+  </ul>
+</nav>
 
 
 
@@ -104,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#useCapture"><span class="nav-number">1.1.</span> <span class="nav-text">useCapture</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-on-event-callback-target-useCapture-true-%E6%8D%95%E8%8E%B7%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BB%8E%E7%88%B6%E8%8A%82%E7%82%B9%E5%BC%80%E5%A7%8B%E4%BE%9D%E6%AC%A1%E6%8D%95%E8%8E%B7%E4%BA%8B%E4%BB%B6-false-%E5%86%92%E6%B3%A1%E6%A8%A1%E5%BC%8F%EF%BC%8C%E4%BB%8E%E5%AD%90%E8%8A%82%E7%82%B9%E5%BC%80%E5%A7%8B%E4%BE%9D%E6%AC%A1%E5%90%91%E7%88%B6%E8%8A%82%E7%82%B9%E5%86%92%E6%B3%A1"><span class="nav-number">2.</span> <span class="nav-text">node.on(event,callback,target,useCapture)- true: 捕获模式，从父节点开始依次捕获事件- false: 冒泡模式，从子节点开始依次向父节点冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1"><span class="nav-number">2.1.</span> <span class="nav-text">阻止冒泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swallowTouches"><span class="nav-number">2.2.</span> <span class="nav-text">swallowTouches</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#useCapture"><span class="nav-number">1.1.</span> <span class="nav-text">useCapture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1"><span class="nav-number">1.2.</span> <span class="nav-text">阻止冒泡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swallowTouches"><span class="nav-number">1.3.</span> <span class="nav-text">swallowTouches</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%80%E9%80%9F%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">2.</span> <span class="nav-text">匀速贝塞尔曲线</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -117,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -185,7 +200,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-06-23 03:18:39" itemprop="dateModified" datetime="2024-06-23T03:18:39+08:00">2024-06-23</time>
+      <time title="Modified: 2025-06-22 14:24:00" itemprop="dateModified" datetime="2025-06-22T14:24:00+08:00">2025-06-22</time>
     </span>
 
   
@@ -198,10 +213,16 @@
     
     
     <div class="post-body" itemprop="articleBody"><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><hr>
-<h3 id="useCapture"><a href="#useCapture" class="headerlink" title="useCapture"></a>useCapture</h3><h2 id="node-on-event-callback-target-useCapture-true-捕获模式，从父节点开始依次捕获事件-false-冒泡模式，从子节点开始依次向父节点冒泡"><a href="#node-on-event-callback-target-useCapture-true-捕获模式，从父节点开始依次捕获事件-false-冒泡模式，从子节点开始依次向父节点冒泡" class="headerlink" title="node.on(event,callback,target,useCapture)- true: 捕获模式，从父节点开始依次捕获事件- false: 冒泡模式，从子节点开始依次向父节点冒泡"></a>node.on(event,callback,target,useCapture)<br>- true: 捕获模式，从父节点开始依次捕获事件<br>- false: 冒泡模式，从子节点开始依次向父节点冒泡</h2><h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><p>node.stopPropagation()</p>
+<h3 id="useCapture"><a href="#useCapture" class="headerlink" title="useCapture"></a>useCapture</h3><p>node.on(event,callback,target,useCapture)</p>
+<ul>
+<li>true: 捕获模式，从父节点开始依次捕获事件</li>
+<li>false: 冒泡模式，从子节点开始依次向父节点冒泡</li>
+</ul>
+<hr>
+<h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><p>node.stopPropagation()</p>
 <ul>
 <li>阻止向父节点冒泡,当前节点其他事件监听依然有效</li>
-<li>useCapture为true时阻止子节点捕获</li>
+<li>useCapture 为 true 时阻止子节点捕获</li>
 </ul>
 <h3 id="swallowTouches"><a href="#swallowTouches" class="headerlink" title="swallowTouches"></a>swallowTouches</h3><ul>
 <li>node._touchListener.setSwallowTouches(args:bool)<ul>
@@ -210,6 +231,7 @@
 </li>
 </ul>
 <hr>
+<h2 id="匀速贝塞尔曲线"><a href="#匀速贝塞尔曲线" class="headerlink" title="匀速贝塞尔曲线"></a>匀速贝塞尔曲线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">bezier(p0: cc.Vec2, p1: cc.Vec2, p2: cc.Vec2, t: number) &#123;</span><br><span class="line">    const p = p0</span><br><span class="line">        .mul(Math.pow(1 - t, 2))</span><br><span class="line">        .add(p1.mul(2 * t * (1 - t)))</span><br><span class="line">        .add(p2.mul(Math.pow(t, 2)));</span><br><span class="line">    return p;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">async bezierUniformMove(pos: cc.Vec2, mid: cc.Vec2, target: cc.Vec2, node: cc.Node, duration: number) &#123;</span><br><span class="line">    let samples: &#123; t: number, len: number &#125;[] = [];</span><br><span class="line">    let totalLen = 0;</span><br><span class="line">    let prev = this.bezier(pos, mid, target, 0);</span><br><span class="line">    for (let i = 1; i &lt;= 100; i++) &#123;</span><br><span class="line">        let t = i / 100;</span><br><span class="line">        let pt = this.bezier(pos, mid, target, t);</span><br><span class="line">        let d = prev.sub(pt).mag();</span><br><span class="line">        totalLen += d;</span><br><span class="line">        samples.push(&#123; t, len: totalLen &#125;);</span><br><span class="line">        prev = pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const getTByLen = (curLen: number) =&gt; &#123;</span><br><span class="line">        for (let i = 0; i &lt; samples.length; i++) &#123;</span><br><span class="line">            if (samples[i].len &gt;= curLen) &#123;</span><br><span class="line">                // 线性插值</span><br><span class="line">                let prev = samples[i - 1] || &#123; t: 0, len: 0 &#125;;</span><br><span class="line">                let ratio = (curLen - prev.len) / (samples[i].len - prev.len);</span><br><span class="line">                return prev.t + (samples[i].t - prev.t) * ratio;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    await asyncMgr.tween(cc.tween(node).to(duration, &#123; position: target &#125;, &#123;</span><br><span class="line">        progress: (start, end, current, ratio) =&gt; &#123;</span><br><span class="line">            const cl = totalLen * ratio;</span><br><span class="line">            const t = getTByLen(cl);</span><br><span class="line">            const result = this.bezier(pos, mid, target, t);</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -250,13 +272,13 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
     <span class="author" itemprop="copyrightHolder">jadehare</span>
   </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
     </div>

@@ -17,29 +17,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="开发日记代码设计基本特性 最小复杂度 易于维护 松散耦合 可扩展性 可重用性 高扇入 （大量的类使用给定的类，例如工具类） 低扇出 （一个类适中地使用其他类） 可移植性 精简性 层次性 标准技术  规范子系统通信规则对象设计 “我该隐藏什么？”  配置Eslint文件目录规范避免语义耦合 Module2 在Module1 修改全局数据后使用这个数据。需要确保数据在M2中是否可用，并且这个参数在M1">
+    <meta name="description" content="开发日记项目管理 确定需求时直接判断是否大量复用，拆分成公用组件。 App版本号规范，MAJOR.MINOR.PATCH。 版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。    目录结构定义类型声明  通用类型声明最好放一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="development dairy">
+<meta property="og:title" content="Development Dairy">
 <meta property="og:url" content="http://example.com/2024/10/21/development-dairy/index.html">
 <meta property="og:site_name" content="狗蛋">
-<meta property="og:description" content="开发日记代码设计基本特性 最小复杂度 易于维护 松散耦合 可扩展性 可重用性 高扇入 （大量的类使用给定的类，例如工具类） 低扇出 （一个类适中地使用其他类） 可移植性 精简性 层次性 标准技术  规范子系统通信规则对象设计 “我该隐藏什么？”  配置Eslint文件目录规范避免语义耦合 Module2 在Module1 修改全局数据后使用这个数据。需要确保数据在M2中是否可用，并且这个参数在M1">
+<meta property="og:description" content="开发日记项目管理 确定需求时直接判断是否大量复用，拆分成公用组件。 App版本号规范，MAJOR.MINOR.PATCH。 版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。    目录结构定义类型声明  通用类型声明最好放一">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/development-dairy/codeFactor.png">
 <meta property="article:published_time" content="2024-10-21T07:05:06.000Z">
-<meta property="article:modified_time" content="2024-10-25T17:20:21.149Z">
+<meta property="article:modified_time" content="2025-06-22T06:24:00.767Z">
 <meta property="article:author" content="jadehare">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/development-dairy/codeFactor.png">
 
 
 <link rel="canonical" href="http://example.com/2024/10/21/development-dairy/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/10/21/development-dairy/","path":"2024/10/21/development-dairy/","title":"development dairy"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/10/21/development-dairy/","path":"2024/10/21/development-dairy/","title":"Development Dairy"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>development dairy | 狗蛋</title>
+<title>Development Dairy | 狗蛋</title>
   
 
 
@@ -53,7 +55,15 @@
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EV0ZB2ZXLY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-EV0ZB2ZXLY');
+</script>
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
 
@@ -62,6 +72,9 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -82,6 +95,10 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-games"><a href="/games/" rel="section"><i class="fa fa-gamepad fa-fw"></i>games</a></li>
+  </ul>
+</nav>
 
 
 
@@ -104,7 +121,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">开发日记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">代码设计基本特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E5%AD%90%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1%E8%A7%84%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">规范子系统通信规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.3.</span> <span class="nav-text">对象设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEEslint"><span class="nav-number">1.4.</span> <span class="nav-text">配置Eslint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83"><span class="nav-number">1.5.</span> <span class="nav-text">文件目录规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E8%AF%AD%E4%B9%89%E8%80%A6%E5%90%88"><span class="nav-number">1.6.</span> <span class="nav-text">避免语义耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%86%9F%E7%BB%83%E6%8E%8C%E6%8F%A1%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.7.</span> <span class="nav-text">熟练掌握常用设计模式</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">开发日记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">项目管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义类型声明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8"><span class="nav-number">2.</span> <span class="nav-text">代码大全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%84%E5%BB%BA%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.1.</span> <span class="nav-text">软件构建中的设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码设计基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83%E5%AD%90%E7%B3%BB%E7%BB%9F%E9%80%9A%E4%BF%A1%E8%A7%84%E5%88%99"><span class="nav-number">2.1.2.</span> <span class="nav-text">规范子系统通信规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">2.1.3.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-Eslint"><span class="nav-number">2.1.4.</span> <span class="nav-text">配置 Eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83"><span class="nav-number">2.1.5.</span> <span class="nav-text">文件目录规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E8%AF%AD%E4%B9%89%E8%80%A6%E5%90%88"><span class="nav-number">2.1.6.</span> <span class="nav-text">避免语义耦合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%86%9F%E7%BB%83%E6%8E%8C%E6%8F%A1%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.1.7.</span> <span class="nav-text">熟练掌握常用设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%9C"><span class="nav-number">2.1.8.</span> <span class="nav-text">记录设计结果:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ADT-abstract-data-type"><span class="nav-number">2.2.1.</span> <span class="nav-text">ADT (abstract data type)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-number">2.2.2.</span> <span class="nav-text">抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">2.2.3.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">2.2.4.</span> <span class="nav-text">类的设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83"><span class="nav-number">2.3.2.</span> <span class="nav-text">规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">防御编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%AD%E8%A8%80"><span class="nav-number">2.4.1.</span> <span class="nav-text">断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%99%E8%AF%AF"><span class="nav-number">2.4.2.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug-%E5%BC%80%E5%8F%91"><span class="nav-number">2.4.3.</span> <span class="nav-text">debug 开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.5.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Typescript"><span class="nav-number">2.5.1.</span> <span class="nav-text">Typescript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E5%90%8D-1"><span class="nav-number">2.5.2.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E8%8C%83-1"><span class="nav-number">2.5.3.</span> <span class="nav-text">规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F"><span class="nav-number">2.6.</span> <span class="nav-text">软件质量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E8%80%85%E6%B5%8B%E8%AF%95"><span class="nav-number">2.6.1.</span> <span class="nav-text">开发者测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Debugger"><span class="nav-number">2.7.</span> <span class="nav-text">Debugger</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E5%AD%A6%E8%B0%83%E8%AF%95"><span class="nav-number">2.7.1.</span> <span class="nav-text">科学调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%BC%BA%E9%99%B7"><span class="nav-number">2.7.2.</span> <span class="nav-text">修改缺陷</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%9E%84"><span class="nav-number">2.8.</span> <span class="nav-text">重构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.8.1.</span> <span class="nav-text">需要代码重构的情况</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -117,7 +134,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -162,12 +179,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="development dairy | 狗蛋">
+      <meta itemprop="name" content="Development Dairy | 狗蛋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          development dairy
+          Development Dairy
         </h1>
 
         <div class="post-meta-container">
@@ -185,7 +202,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-26 01:20:21" itemprop="dateModified" datetime="2024-10-26T01:20:21+08:00">2024-10-26</time>
+      <time title="Modified: 2025-06-22 14:24:00" itemprop="dateModified" datetime="2025-06-22T14:24:00+08:00">2025-06-22</time>
     </span>
 
   
@@ -197,48 +214,70 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="代码设计基本特性"><a href="#代码设计基本特性" class="headerlink" title="代码设计基本特性"></a>代码设计基本特性</h2><ul>
+    <div class="post-body" itemprop="articleBody"><h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
+<li>确定需求时直接判断是否大量复用，拆分成公用组件。</li>
+<li>App版本号规范，MAJOR.MINOR.PATCH。<blockquote>
+<p>版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
+<ul>
+<li>通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。</li>
+<li>单独类型放入各自目录下, 避免于通用类型声明混淆。</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scripts/</span><br><span class="line">├── interfaces/ --&gt;接口</span><br><span class="line">│   ├── IUser.ts</span><br><span class="line">│   └── IReward.ts</span><br><span class="line">├── activities/activity/   --&gt;某单独活动</span><br><span class="line">│   └── interfaces/</span><br><span class="line">│       └── IActivity.ts</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码大全"><a href="#代码大全" class="headerlink" title="代码大全"></a>代码大全</h1><h2 id="软件构建中的设计"><a href="#软件构建中的设计" class="headerlink" title="软件构建中的设计"></a>软件构建中的设计</h2><h3 id="代码设计基本特性"><a href="#代码设计基本特性" class="headerlink" title="代码设计基本特性"></a>代码设计基本特性</h3><ul>
 <li>最小复杂度</li>
 <li>易于维护</li>
 <li>松散耦合</li>
 <li>可扩展性</li>
 <li>可重用性</li>
-<li>高扇入 （大量的类使用给定的类，例如工具类）</li>
-<li>低扇出 （一个类适中地使用其他类）</li>
+<li>高扇入 (大量的类使用给定的类, 例如工具类)</li>
+<li>低扇出 (一个类适中地使用其他类)</li>
 <li>可移植性</li>
 <li>精简性</li>
 <li>层次性</li>
-<li>标准技术</li>
+<li>标准技术<span id="more"></span></li>
 </ul>
-<h2 id="规范子系统通信规则"><a href="#规范子系统通信规则" class="headerlink" title="规范子系统通信规则"></a>规范子系统通信规则</h2><h2 id="对象设计"><a href="#对象设计" class="headerlink" title="对象设计"></a>对象设计</h2><ul>
-<li>“我该隐藏什么？”</li>
+<h3 id="规范子系统通信规则"><a href="#规范子系统通信规则" class="headerlink" title="规范子系统通信规则"></a>规范子系统通信规则</h3><h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><ul>
+<li>信息隐藏 “我该隐藏什么？”;</li>
+<li>为测试而设计。如何便于测试, 各个系统能独立检查。</li>
 </ul>
-<h2 id="配置Eslint"><a href="#配置Eslint" class="headerlink" title="配置Eslint"></a>配置Eslint</h2><h2 id="文件目录规范"><a href="#文件目录规范" class="headerlink" title="文件目录规范"></a>文件目录规范</h2><h2 id="避免语义耦合"><a href="#避免语义耦合" class="headerlink" title="避免语义耦合"></a>避免语义耦合</h2><ul>
-<li><p>Module2 在Module1 修改全局数据后使用这个数据。需要确保数据在M2中是否可用，并且这个参数在M1 中被正常调用过。</p>
-<ul>
-<li>使用事件驱动或者状态管理。</li>
-</ul>
+<h3 id="配置-Eslint"><a href="#配置-Eslint" class="headerlink" title="配置 Eslint"></a>配置 Eslint</h3><h3 id="文件目录规范"><a href="#文件目录规范" class="headerlink" title="文件目录规范"></a>文件目录规范</h3><h3 id="避免语义耦合"><a href="#避免语义耦合" class="headerlink" title="避免语义耦合"></a>避免语义耦合</h3><ul>
+<li><p>Module2 在 Module1 修改全局数据后使用这个数据。需要确保数据在 M2 中是否可用, 并且这个参数在 M1 中被正常调用过。</p>
+<blockquote>
+<p>使用事件驱动或者状态管理。</p>
+</blockquote>
 </li>
-<li><p>M1 在调用func()时会先调用init(); M2 在使用M1.func()时知道会提前调用M1.init();</p>
-<ul>
-<li>M1初始化时直接调用。或者func()中判断initProperty参数状态自动调用init();</li>
-</ul>
+<li><p>M1 在调用 func()时会先调用 init(); M2 在使用 M1.func()时知道会提前调用 M1.init();</p>
+<blockquote>
+<ol>
+<li>M1 初始化时直接调用。</li>
+<li>func()中判断 initProperty 参数状态自动调用 init();</li>
+<li>func()中添加断言, 判断 init 是否被调用。</li>
+</ol>
+</blockquote>
 </li>
-<li><p>M1 传对象obj给M2， 知道M2只需要部分obj的参数，所以只初始化了M2需要的几个参数;</p>
-<ul>
-<li>对象接口抽象</li>
-</ul>
+<li><p>M1 传对象 obj 给 M2, 知道 M2 只需要部分 obj 的参数, 所以只初始化了 M2 需要的几个参数;</p>
+<blockquote>
+<p>对象接口抽象</p>
+</blockquote>
 </li>
-<li><p>M1 传类型BaseObject 对象给M2，M2 知道实际传的是DerivedObject 类型，所以把对象强制转换成了DerivedObject 类型;</p>
-<ul>
-<li>直接传DerivedObject 类型;</li>
-</ul>
+<li><p>M1 传类型 BaseObject 对象给 M2, M2 知道实际传的是 DerivedObject 类型, 所以把对象强制转换成了 DerivedObject 类型;</p>
+<blockquote>
+<p>直接传 DerivedObject 类型;</p>
+</blockquote>
 </li>
 </ul>
-<h2 id="熟练掌握常用设计模式"><a href="#熟练掌握常用设计模式" class="headerlink" title="熟练掌握常用设计模式"></a>熟练掌握常用设计模式</h2><p>经常比对需求判断其中的逻辑是否有合适的设计模式。</p>
+<h3 id="熟练掌握常用设计模式"><a href="#熟练掌握常用设计模式" class="headerlink" title="熟练掌握常用设计模式"></a>熟练掌握常用设计模式</h3><blockquote>
+<p>经常比对需求判断其中的逻辑是否有合适的设计模式。</p>
+</blockquote>
 <p>常用设计模式:</p>
 <ul>
-<li>Abstract Factory抽象工厂</li>
+<li>Abstract Factory 抽象工厂</li>
 <li>Adapter 适配器</li>
 <li>Bridge 桥接</li>
 <li>Composite 组合</li>
@@ -250,6 +289,214 @@
 <li>Singleton 单件</li>
 <li>Strategy 策略</li>
 <li>Template Method 模板方法</li>
+</ul>
+<h3 id="记录设计结果"><a href="#记录设计结果" class="headerlink" title="记录设计结果:"></a>记录设计结果:</h3><ul>
+<li>设计文档插入到代码中<blockquote>
+<p>代码开头写明关键设计决策。类似 JavaDoc 的工具, 直接提取注释生成 api 文档。</p>
+</blockquote>
+</li>
+<li>wiki 记录<blockquote>
+<p>更全面, 更多文字格式, 可以贴图, 链接等。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><blockquote>
+<p>开发程序任意一部分代码时, 能够安全地忽视程序中尽可能多的其余部分。类是实现这一目标的首要工具。</p>
+</blockquote>
+<h3 id="ADT-abstract-data-type"><a href="#ADT-abstract-data-type" class="headerlink" title="ADT (abstract data type)"></a>ADT (abstract data type)</h3><blockquote>
+<p>抽象数据类型, 指一些数据以及对这些数据所进行的操作的集合。</p>
+</blockquote>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><blockquote>
+<p>如果阅读注释(文档)后仍然不知道接口的作用, 那说明接口抽象不够或者内聚性不强。</p>
+</blockquote>
+<ul>
+<li>目标一致, 功能与类紧密结合。</li>
+<li>抽象层次一致。一个类中实现单一 ADT(感觉不是很绝对)</li>
+<li>同时考虑抽象性和内聚性。</li>
+</ul>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<li><p>类的接口与类的实现隔离 PImpl(Pointer to Implementation)</p>
+<blockquote>
+<ul>
+<li>减少编译依赖, 只用重新编译 MyClass.cpp。否则所有引用 MyClass.h 的 cpp 都要重新编译。</li>
+<li>高封装, 高可维护。</li>
+<li>ABI 兼容性(暂时接触不到)</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// MyClass.h</span><br><span class="line">class MyClassImpl;  // 只声明, 不引入具体实现</span><br><span class="line">class MyClass &#123;</span><br><span class="line">private:</span><br><span class="line">    MyClassImpl* pImpl;  // 指向实现的指针</span><br><span class="line">public:</span><br><span class="line">    MyClass();</span><br><span class="line">    ~MyClass();</span><br><span class="line">    void doSomething();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// MyClass.cpp</span><br><span class="line">void MyClass::doSomething() &#123;</span><br><span class="line">    pImpl-&gt;doSomething();  // 委托实现</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="类的设计"><a href="#类的设计" class="headerlink" title="类的设计"></a>类的设计</h3><blockquote>
+<p>太抽象的也想不明白, 只能说要先多想。想了之后画画之类的再实现。实现后觉得有问题多重构。实现太多后不好重构了再去想就晚了, 想不明白了。晚了之后也要总结点经验。</p>
+</blockquote>
+<ul>
+<li>接口是规范, 规定有什么。类是模版, 有什么, 可以做什么。</li>
+<li>7±2 法则。一个类超过约 7 个数据成员时考虑是否需要拆分。</li>
+<li>Liskov 替换原则(LSP)。子类必须能够完全替换父类, 而不会影响程序正确性。必须语义完全相同才可以继承。派生类“是一个”特殊的“基类”。</li>
+<li>继承不得超过 2 层<blockquote>
+<p>推荐是 2-3 层, 按理说超过两层复杂度已经很高了, 考虑通过不同抽象的方式减少层数。</p>
+<ul>
+<li>组合。继承是“是一个”, 组合是“有一个”。通过包含其他类的实例构建复杂功能。</li>
+<li>策略模式。是“有很多个”, 可以动态切换的时候使用策略模式。例如不同登录方法。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><ul>
+<li>描述所做的所有事情, 如果太长则可能需要拆分方法。</li>
+<li>含义清晰, 不要用 Handle, deal 等词。</li>
+<li>长度最多 15 个字符。</li>
+<li>命名时对返回值有所描述, 能看出返回结果。</li>
+<li>准确使用对仗词, 一组名词命名规范要相同。</li>
+<li>确定命名规范。</li>
+</ul>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><ul>
+<li>一个方法尽量不超过 200 行。</li>
+<li>参数 7 个以内</li>
+</ul>
+<h2 id="防御编程"><a href="#防御编程" class="headerlink" title="防御编程"></a>防御编程</h2><blockquote>
+<ul>
+<li>垃圾进, 什么都不出。</li>
+<li>垃圾进, 错误提示出。</li>
+<li>不许垃圾进。</li>
+</ul>
+</blockquote>
+<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><blockquote>
+<p>处理不应该发生的情况, 例如某参数为空。</p>
+</blockquote>
+<h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><blockquote>
+<p>处理有可能出现错误的情况, 抛出异常并处理保证程序正常进行, 定位问题输出日志帮助解决问题。</p>
+</blockquote>
+<h3 id="debug-开发"><a href="#debug-开发" class="headerlink" title="debug 开发"></a>debug 开发</h3><ul>
+<li>使用辅助调试代码, 方便开发。使用测试代码, 测试数据, 方便调用快速测试逻辑。需要判断环境避免在生产环境中使用。使用测试用例, 确保逻辑没有问题。</li>
+<li>进攻式编程, 考虑极端情况。</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h3><ul>
+<li>变量直接初始化, 声明变量类型。<blockquote>
+<p>基础类型直接使用默认值, 0、”” 等;对象使用 null;数组使用[]; 判断时使用强等, 避免隐式转换。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="命名-1"><a href="#命名-1" class="headerlink" title="命名"></a>命名</h3><ul>
+<li>规范命名规则。<blockquote>
+<ul>
+<li>别拼错。</li>
+<li>类名大写开头, 对象小写开头。(Unity 都是大写, 局部变量是小写)</li>
+<li>接口: IInterface 与类做区分。</li>
+<li>枚举: XXXType, XXXStatus。不单独使用, 直接调用即可, 不需要加前缀。</li>
+<li>全局变量全部大写 GLOBAL_XXXX。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="规范-1"><a href="#规范-1" class="headerlink" title="规范"></a>规范</h3><ul>
+<li><p>减少无意义数字</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const duration = 0.2;</span><br><span class="line">cc.tween().to(duration,&#123;&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bool 值不要再判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = true;</span><br><span class="line">a === true ???</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用枚举</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">enum Type&#123;</span><br><span class="line">  a = 1,</span><br><span class="line">  b = 2,</span><br><span class="line">&#125;</span><br><span class="line">if(n === Type.a)&#123;</span><br><span class="line">  //</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>过度声明</p>
+<blockquote>
+<p>bool 值可以考虑使用数字类型, 后续开发有可能状态会变为多个的情况。</p>
+</blockquote>
+</li>
+<li><p>禁止使用 var, 使用 const 和 let。</p>
+<blockquote>
+<p>eslint 配置自动将未重新赋值 let 改为 const。还能确保变量一定初始化。就是后续要再修改的时候还得回去改成 let 确实有点烦了。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><ul>
+<li><p>代码特性之间的影响<br><img src="/../img/development-dairy/codeFactor.png" alt="avatar"></p>
+</li>
+<li><p>代码缺陷检出</p>
+<blockquote>
+<p>代码检查比测试成本低效果好，要养成阅读代码的习惯，自检设计，自检代码。</p>
+</blockquote>
+<ul>
+<li>非正式设计复查 （小团队）</li>
+<li>正式设计检查 （强制流程审查）</li>
+<li>非正式代码复查 (code review)</li>
+<li>正式代码检查 (关键模块深度检查)</li>
+<li>建立模型或原型 （验证技术方案可行性）</li>
+<li>个人桌面代码检查 （自查）</li>
+<li>单元测试</li>
+<li>集成测试</li>
+<li>回归测试</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发者测试"><a href="#开发者测试" class="headerlink" title="开发者测试"></a>开发者测试</h3><blockquote>
+<ul>
+<li>测试不会改善软件质量，改善软件质量需要的是更高质量的开发。</li>
+<li>测试目的是找到错误而不是完成流程。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>测试方法</p>
+<ul>
+<li>测试用例</li>
+<li>设计关注点测试</li>
+<li>基础测试+数据流测试</li>
+<li>检查表，记录所有犯错的类型</li>
+</ul>
+</li>
+<li><p>测试注意事项</p>
+<ul>
+<li>尽可能多的满足测试覆盖率。（尽量保证每行代码都被执行了）</li>
+<li>dirty tests 应该是 clean tests 的 25 倍。（只能说尽可能的多吧，测试用例都不一定能写 25 个）<blockquote>
+<ul>
+<li>clean tests: 预期的输入输出。 功能稳定后实现，自动化测试用例确保功能稳定运行。</li>
+<li>dirty tests: 极端,错误数据验证系统处理能力。能够快速试错</li>
+</ul>
+</blockquote>
+</li>
+<li>边界值分析</li>
+</ul>
+</li>
+<li><p>结构化基础测试</p>
+<blockquote>
+<p>测试用例最少数量计算方法，遇到 if while for 等关键字计数+1. 感觉没必要这么多，视代码重要程度而定。算上个系数，一般游戏开发 N _ 0.1， 关键逻辑 N _ 0.5, 代码质量要求极高再直接 N 吧。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><h3 id="科学调试"><a href="#科学调试" class="headerlink" title="科学调试"></a>科学调试</h3><ol>
+<li>确定错误状态，触发错误的具体条件，尽量稳定复现，锁定错误范围。</li>
+<li>收集错误相关数据</li>
+<li>根据相关数据构造导致错误问题的假说</li>
+<li>分析如何证明假说</li>
+<li>实现假说证明是否能够修补，不能则重回 *3.</li>
+<li>测试</li>
+<li>判断是否还有类似错误<blockquote>
+<p>比较关键，改 bug 谁都会改，能多想多思考发现更多问题才是更好的开发。反思问题出现的原因，优化代码逻辑代码结构。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>确定错误后可以添加单元测试避免再次出现相同或者类似的错误。</li>
+<li>实在找不到可以休息一下，说不定啥时候来灵感了。</li>
+</ul>
+<h3 id="修改缺陷"><a href="#修改缺陷" class="headerlink" title="修改缺陷"></a>修改缺陷</h3><ul>
+<li>修改代码前要确保理解问题和相关程序。</li>
+<li>修改后一定要测试，不管多小的改动。</li>
+<li>治本，理解错误最根本的，不要治标不治本</li>
+</ul>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><h3 id="需要代码重构的情况"><a href="#需要代码重构的情况" class="headerlink" title="需要代码重构的情况"></a>需要代码重构的情况</h3><ul>
+<li>代码重复<blockquote>
+<p>编写过程中就要避免，如果有重复代码就要抽象出来避免重复，哪怕只有两段重复）</p>
+</blockquote>
+</li>
+<li>冗长的子程序<blockquote>
+<p>编写过程中就要避免</p>
+</blockquote>
+<ul>
+<li>循环过长或嵌套过深</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -269,6 +516,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/11/19/software/" rel="next" title="software">
+                  software <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -288,13 +538,13 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
     <span class="author" itemprop="copyrightHolder">jadehare</span>
   </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
     </div>
