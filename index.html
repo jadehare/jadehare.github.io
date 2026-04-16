@@ -127,7 +127,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -158,7 +158,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/03/shell/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/04/01/copilot-instructions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -176,7 +176,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/06/03/shell/" class="post-title-link" itemprop="url">shell</a>
+          <a href="/2026/04/01/copilot-instructions/" class="post-title-link" itemprop="url">Untitled</a>
         </h2>
 
         <div class="post-meta-container">
@@ -186,9 +186,8 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-06-03 14:26:10 / Modified: 14:32:33" itemprop="dateCreated datePublished" datetime="2025-06-03T14:26:10+08:00">2025-06-03</time>
+      <time title="Created: 2026-04-01 17:57:54" itemprop="dateCreated datePublished" datetime="2026-04-01T17:57:54+08:00">2026-04-01</time>
     </span>
 
   
@@ -201,15 +200,749 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ul>
-<li><p>查看 ts 文件增删记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">date=&quot;2025-04-29&quot;;authorName=$(git config user.name);git log --all --author=$&#123;authorName&#125; --since=&quot;$&#123;date&#125; 00:00:00&quot; --until=&quot;$&#123;date&#125; 23:59:59&quot; --pretty=tformat: --numstat | awk &#x27;$3 ~ /\.ts$/ &#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf &quot;added lines: %s, removed lines: %s, total lines: %s\n&quot;, add, subs, loc &#125;&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看所有提交记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date=&quot;2025-02-20&quot;;authorName=$(git config user.name);git log --source --all --author=&quot;$&#123;authorName&#125;&quot; --since=&quot;$&#123;date&#125;&quot; --until=&quot;$&#123;date&#125; 23:59:59&quot; --oneline --graph --decorate</span><br></pre></td></tr></table></figure></li>
+          <h1 id="项目说明"><a href="#项目说明" class="headerlink" title="项目说明"></a>项目说明</h1><h2 id="项目概况"><a href="#项目概况" class="headerlink" title="项目概况"></a>项目概况</h2><ul>
+<li>本项目基于 <code>Cocos Creator 2.4.15</code> 开发。</li>
+<li>主要开发语言为 <code>TypeScript</code>。</li>
+<li>Android 平台使用 <code>Android Studio</code> 进行构建。</li>
+<li>iOS 平台使用 <code>Xcode</code> 进行构建。</li>
 </ul>
-<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><ul>
-<li>查看应用内存使用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -axo rss,comm | grep &#x27;Google Chrome&#x27; | awk &#x27;&#123;sum+=$1&#125; END &#123;print sum/1024 &quot; MB&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
+<h2 id="协作约定"><a href="#协作约定" class="headerlink" title="协作约定"></a>协作约定</h2><ul>
+<li>所有改动应尽量兼容 <code>Cocos Creator 2.4.15</code> 的工作流和项目结构。</li>
+<li>优先遵循仓库现有的 TypeScript 编码风格与目录组织方式。</li>
+<li>避免引入当前 <code>Cocos Creator 2.4.15</code> 环境不支持的工具链、语法或特性。</li>
+<li>涉及移动端构建调整时，Android 相关改动应保持兼容 Android Studio 工程，iOS 相关改动应保持兼容 Xcode 工程。</li>
+</ul>
+<h2 id="构建背景"><a href="#构建背景" class="headerlink" title="构建背景"></a>构建背景</h2><ul>
+<li><code>Cocos Creator</code> 是游戏逻辑开发与资源集成的主要编辑环境。</li>
+<li>导出或生成原生工程后，移动端的打包、调试与发布流程继续在 <code>Android Studio</code> 和 <code>Xcode</code> 中完成。</li>
+</ul>
+<h2 id="提交约定"><a href="#提交约定" class="headerlink" title="提交约定"></a>提交约定</h2><ul>
+<li>如果用户输入 <code>commit</code>，默认表示要直接提交当前已暂存的内容</li>
+<li>只允许基于当前 <code>git add</code> 过的 staged diff 整理改动并生成简短 commit message</li>
+<li>默认不要自动把未暂存文件加入提交</li>
+<li>如果 staged 为空,应明确提示无法提交</li>
+<li>如果 staged 内容明显混入无关改动，应先提醒用户再决定是否继续提交</li>
+<li>commit message 默认保持简短、直接，优先使用类似 <code>feat: ...</code>、<code>fix: ...</code>、<code>refactor: ...</code> 的格式</li>
+<li>除非用户明确要求，否则不要改写历史，不要 <code>commit --amend</code>，不要执行破坏性 git 操作</li>
+<li>用中文提交</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/04/01/development-standards.instructions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/04/01/development-standards.instructions/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-04-01 17:57:54" itemprop="dateCreated datePublished" datetime="2026-04-01T17:57:54+08:00">2026-04-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="开发习惯规范"><a href="#开发习惯规范" class="headerlink" title="开发习惯规范"></a>开发习惯规范</h1><h2 id="1-Button-事件监听"><a href="#1-Button-事件监听" class="headerlink" title="1. Button 事件监听"></a>1. Button 事件监听</h2><p>开发时如果遇到 <code>XQButton</code> 或 <code>cc.Button</code> 类型，添加点击监听事件时统一使用以下写法：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">btn</span>.<span class="property">node</span>.<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="variable language_">this</span>.<span class="property">onClick</span>, <span class="variable language_">this</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li>统一使用 <code>on(&quot;click&quot;, handler, this)</code> 形式绑定。</li>
+<li>第三个参数必须传 <code>this</code>，保证回调上下文正确。</li>
+<li>禁止省略上下文参数或改为匿名函数包装。</li>
+</ul>
+<h2 id="2-property-节点空值检查"><a href="#2-property-节点空值检查" class="headerlink" title="2. @property 节点空值检查"></a>2. @property 节点空值检查</h2><p>对于使用 <code>@property</code> 装饰器声明的属性（通常是编辑器绑定的节点或组件），在代码中使用时<strong>不要添加空值判断</strong>。</p>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><ul>
+<li><p><strong>错误写法</strong>：</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@property</span>(cc.<span class="property">Node</span>)</span><br><span class="line"><span class="attr">myNode</span>: cc.<span class="property">Node</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">start</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">myNode</span>) &#123; <span class="comment">// ❌ 禁止这种防御性编程</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">myNode</span>.<span class="property">active</span> = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>正确写法</strong>：</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">start</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">myNode</span>.<span class="property">active</span> = <span class="literal">true</span>; <span class="comment">// ✅ 直接调用，如果为空直接报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><ul>
+<li>这些属性预期必须在编辑器中挂载。</li>
+<li>如果运行时为空，直接抛出异常（NullPointerException）能第一时间暴露“忘记挂载节点”的问题。</li>
+<li>添加空值判断会掩盖配置错误，导致功能静默失效，增加排查难度。</li>
+</ul>
+<h2 id="3-多语言调用方法"><a href="#3-多语言调用方法" class="headerlink" title="3. 多语言调用方法"></a>3. 多语言调用方法</h2><p>需要使用多语言文案时，统一通过以下方式获取：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">GlobalObjectMgr</span>.<span class="property">instance</span>.<span class="property">localizedTextHelper</span>.<span class="title function_">getLocalString</span>(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束-1"><a href="#约束-1" class="headerlink" title="约束"></a>约束</h3><ul>
+<li>统一使用 <code>GlobalObjectMgr.instance.localizedTextHelper.getLocalString(key)</code>。</li>
+</ul>
+<h2 id="4-动画实现方式"><a href="#4-动画实现方式" class="headerlink" title="4. 动画实现方式"></a>4. 动画实现方式</h2><p>需要实现动画效果时，统一使用 <code>cc.tween</code> 方法。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc.<span class="title function_">tween</span>(node).<span class="title function_">to</span>(<span class="number">0.3</span>, &#123; <span class="attr">scale</span>: <span class="number">1.1</span> &#125;).<span class="title function_">start</span>();</span><br></pre></td></tr></table></figure>
+
+<p>如有异步串行动画需求，统一使用：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> asyncMgr.<span class="title function_">tween</span>(cc.<span class="title function_">tween</span>(node).<span class="title function_">to</span>(<span class="number">0.3</span>, &#123; <span class="attr">scale</span>: <span class="number">1.1</span> &#125;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束-2"><a href="#约束-2" class="headerlink" title="约束"></a>约束</h3><ul>
+<li>普通动画统一使用 <code>cc.tween(...).start()</code>。</li>
+<li>异步场景统一使用 <code>asyncMgr.tween(cc.tween(...))</code>,异步方法调用不需要调用 <code>start()</code>。</li>
+</ul>
+<h2 id="5-弹窗节点复用规范"><a href="#5-弹窗节点复用规范" class="headerlink" title="5. 弹窗节点复用规范"></a>5. 弹窗节点复用规范</h2><p>继承 <code>WindowBase</code> 或 <code>UIBase</code> 的脚本属于弹窗界面。</p>
+<h3 id="生命周期说明"><a href="#生命周期说明" class="headerlink" title="生命周期说明"></a>生命周期说明</h3><ul>
+<li>节点一般情况下不会销毁。</li>
+<li>每次打开弹窗都会调用 <code>refreshUI</code>。</li>
+</ul>
+<h3 id="开发约束"><a href="#开发约束" class="headerlink" title="开发约束"></a>开发约束</h3><ul>
+<li>节点尽量避免“销毁后再创建”的实现方式。</li>
+<li>如果存在动态创建节点并维护数组的场景，不要在每次 <code>refreshUI</code> 时清空并重建。</li>
+<li>首次创建后应缓存到数组中，后续 <code>refreshUI</code> 直接复用数组内节点，仅更新显示状态和内容。</li>
+<li>仅在确实需要时补充新增节点，已有节点优先复用。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/04/01/review.instructions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/04/01/review.instructions/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-04-01 17:57:54" itemprop="dateCreated datePublished" datetime="2026-04-01T17:57:54+08:00">2026-04-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="代码审查规范"><a href="#代码审查规范" class="headerlink" title="代码审查规范"></a>代码审查规范</h1><p>当用户输入 <code>review</code> 时，按以下步骤自动执行代码审查：</p>
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><ol>
+<li><p><strong>查看 unstaged 文件</strong></p>
+<ul>
+<li>执行 <code>git status</code> 查看当前所有 unstaged 文件列表</li>
+</ul>
+</li>
+<li><p><strong>筛选代码文件</strong></p>
+<ul>
+<li>只审查代码文件（<code>.ts</code>、<code>.js</code> 等源代码文件）</li>
+<li><strong>跳过以下类型的文件</strong>：<ul>
+<li><code>.meta</code> 文件（Cocos Creator 元数据文件）</li>
+<li><code>.prefab</code> 文件（预制体文件）</li>
+<li><code>.scene</code> 文件（场景文件）</li>
+<li>图片、音频等资源文件（<code>.png</code>、<code>.jpg</code>、<code>.mp3</code> 等）</li>
+<li>其他非代码文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>审查内容</strong></p>
+<ul>
+<li>读取筛选后的每个代码文件</li>
+<li>检查以下问题：<ul>
+<li>代码风格是否符合项目规范</li>
+<li>是否遵循 <a href="development-standards.instructions.md">development-standards.instructions.md</a> 中定义的开发习惯</li>
+<li>是否有明显的逻辑错误或 bug</li>
+<li>是否有未处理的 null&#x2F;undefined 检查</li>
+<li>是否存在不适当的错误处理</li>
+<li>命名是否清晰规范</li>
+<li>是否有多余的代码或死代码</li>
+<li>是否有性能问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>输出审查结果</strong></p>
+<ul>
+<li>逐个文件列出发现的问题</li>
+<li>对每个问题提供具体建议</li>
+<li>如果没有问题，输出确认信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="审查标准"><a href="#审查标准" class="headerlink" title="审查标准"></a>审查标准</h2><h3 id="必须检查"><a href="#必须检查" class="headerlink" title="必须检查"></a>必须检查</h3><ul>
+<li>遵循 TypeScript 编码规范</li>
+<li>遵循项目中 <a href="development-standards.instructions.md">development-standards.instructions.md</a> 的约定</li>
+<li>Button 事件监听是否使用规范的 <code>on(&quot;click&quot;, handler, this)</code> 写法</li>
+<li>@property 节点是否添加了不必要的空值判断</li>
+<li>是否正确使用多语言 API</li>
+<li>动画是否使用了 <code>cc.tween</code> 方法</li>
+<li>弹窗节点是否遵循复用规范</li>
+</ul>
+<h3 id="参考检查"><a href="#参考检查" class="headerlink" title="参考检查"></a>参考检查</h3><ul>
+<li>代码可读性和维护性</li>
+<li>潜在的边界情况处理</li>
+<li>异常处理的完整性</li>
+<li>资源泄漏风险</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/14/CPlusPlus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/14/CPlusPlus/" class="post-title-link" itemprop="url">CPlusPlus</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-14 23:14:44" itemprop="dateCreated datePublished" datetime="2021-03-14T23:14:44+08:00">2021-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h1><p>  构造用explicit声明，防止非必要的隐式转换</p>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference &amp;"></a>reference &amp;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val = 1024;</span><br><span class="line">    int &amp;refVal = ival;</span><br><span class="line"></span><br><span class="line">    int ii = val;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    val = 1025;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    refVal = 1026;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 1024  1024  1024</span><br><span class="line">// 1025  1025  1024</span><br><span class="line">// 1026  1026  1024</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/05/Debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/05/Debug/" class="post-title-link" itemprop="url">Cocos Creator Android and IOS Debug</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-05 16:47:14" itemprop="dateCreated datePublished" datetime="2020-08-05T16:47:14+08:00">2020-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-04-16 15:56:36" itemprop="dateModified" datetime="2026-04-16T15:56:36+08:00">2026-04-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="IOS"><a href="#IOS" class="headerlink" title="IOS"></a>IOS</h3><p><a href="devtools://devtools/bundled/js_app.html?v8only=true&ws=127.0.0.1:6086/00010002-0003-4004-8005-000600070008">devtools:&#x2F;&#x2F;devtools&#x2F;bundled&#x2F;js_app.html?v8only&#x3D;true&amp;ws&#x3D;127.0.0.1:6086&#x2F;00010002-0003-4004-8005-000600070008</a></p>
+<h4 id="usb端口映射"><a href="#usb端口映射" class="headerlink" title="usb端口映射"></a>usb端口映射</h4><p>brew install libusbmuxd<br>iproxy 6086 6086</p>
+<hr>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>第一步:构建项目</p>
+<p>第二步:AndroidStudio 打开项目 build&#x2F;jsb-default&#x2F;frameworks&#x2F;runtime-src&#x2F;proj.android-studio</p>
+<p>第三步:使用外部 Android 设备运行项目;</p>
+<p>第四步:</p>
+<ul>
+<li><p>App 启动后控制台输入 adb logcat|grep “chrome-devtools”;</p>
+</li>
+<li><p>输出 log 04-17 14:05:51.386 9858 10015 D jswrapper: Debugger listening…, visit [ chrome-devtools:&#x2F;&#x2F;devtools&#x2F;bundled&#x2F;inspector.html?v8only&#x3D;true&amp;ws&#x3D;0.0.0.0:<code>5086</code>&#x2F;00010002-0003-4004-8005-000600070008 ] in chrome browser to debug!</p>
+</li>
+<li><p>控制台输入 adb forward tcp:5086 tcp:5086;</p>
+</li>
+</ul>
+<p>第五步: 浏览器打开：<a href="devtools://devtools/bundled/inspector.html?v8only=true&ws=0.0.0.0:`5086`/00010002-0003-4004-8005-000600070008">devtools:&#x2F;&#x2F;devtools&#x2F;bundled&#x2F;inspector.html?v8only&#x3D;true&amp;ws&#x3D;0.0.0.0:5086&#x2F;00010002-0003-4004-8005-000600070008</a> 开始调试</p>
+<h4 id="远程调试接口快照"><a href="#远程调试接口快照" class="headerlink" title="远程调试接口快照"></a>远程调试接口快照</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://&#123;设备ip&#125;:6086/json</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/17/cocos-creator-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/17/cocos-creator-note/" class="post-title-link" itemprop="url">Cocos Creator 笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-17 17:21:30" itemprop="dateCreated datePublished" datetime="2020-08-17T17:21:30+08:00">2020-08-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-04-01 17:58:06" itemprop="dateModified" datetime="2026-04-01T17:58:06+08:00">2026-04-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="开发环境构建"><a href="#开发环境构建" class="headerlink" title="开发环境构建"></a>开发环境构建</h1><h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -D @eslint/js@^10.0.1 eslint@^10.0.3 eslint-config-prettier@^10.1.8 eslint-plugin-only-warn@^1.2.1 eslint-plugin-prettier@^5.5.5 globals@^17.4.0 prettier@^3.8.1 typescript@^5.9.3 typescript-eslint@^8.57.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
+<li><p><a href="/files/editorconfig.txt">.editorconfig</a></p>
+</li>
+<li><p><a href="/files/eslint.config.mjs.txt">eslint.config.mjs</a></p>
+</li>
+<li><p><a href="/files/eslint-prettier.vscode-settings.json.txt">eslint prettier vscode settings</a></p>
+</li>
+</ul>
+<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><hr>
+<h3 id="useCapture"><a href="#useCapture" class="headerlink" title="useCapture"></a>useCapture</h3><p>node.on(event,callback,target,useCapture)</p>
+<ul>
+<li>true: 捕获模式，从父节点开始依次捕获事件</li>
+<li>false: 冒泡模式，从子节点开始依次向父节点冒泡</li>
+</ul>
+<hr>
+<h3 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h3><p>node.stopPropagation()</p>
+<ul>
+<li>阻止向父节点冒泡,当前节点其他事件监听依然有效</li>
+<li>useCapture 为 true 时阻止子节点捕获</li>
+</ul>
+<h3 id="swallowTouches"><a href="#swallowTouches" class="headerlink" title="swallowTouches"></a>swallowTouches</h3><ul>
+<li>node._touchListener.setSwallowTouches(args:bool)<ul>
+<li>true:穿透触摸事件</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="匀速贝塞尔曲线"><a href="#匀速贝塞尔曲线" class="headerlink" title="匀速贝塞尔曲线"></a>匀速贝塞尔曲线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">bezier(p0: cc.Vec2, p1: cc.Vec2, p2: cc.Vec2, t: number) &#123;</span><br><span class="line">    const p = p0</span><br><span class="line">        .mul(Math.pow(1 - t, 2))</span><br><span class="line">        .add(p1.mul(2 * t * (1 - t)))</span><br><span class="line">        .add(p2.mul(Math.pow(t, 2)));</span><br><span class="line">    return p;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">async bezierUniformMove(pos: cc.Vec2, mid: cc.Vec2, target: cc.Vec2, node: cc.Node, duration: number) &#123;</span><br><span class="line">    let samples: &#123; t: number, len: number &#125;[] = [];</span><br><span class="line">    let totalLen = 0;</span><br><span class="line">    let prev = this.bezier(pos, mid, target, 0);</span><br><span class="line">    for (let i = 1; i &lt;= 100; i++) &#123;</span><br><span class="line">        let t = i / 100;</span><br><span class="line">        let pt = this.bezier(pos, mid, target, t);</span><br><span class="line">        let d = prev.sub(pt).mag();</span><br><span class="line">        totalLen += d;</span><br><span class="line">        samples.push(&#123; t, len: totalLen &#125;);</span><br><span class="line">        prev = pt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    const getTByLen = (curLen: number) =&gt; &#123;</span><br><span class="line">        for (let i = 0; i &lt; samples.length; i++) &#123;</span><br><span class="line">            if (samples[i].len &gt;= curLen) &#123;</span><br><span class="line">                // 线性插值</span><br><span class="line">                let prev = samples[i - 1] || &#123; t: 0, len: 0 &#125;;</span><br><span class="line">                let ratio = (curLen - prev.len) / (samples[i].len - prev.len);</span><br><span class="line">                return prev.t + (samples[i].t - prev.t) * ratio;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    await asyncMgr.tween(cc.tween(node).to(duration, &#123; position: target &#125;, &#123;</span><br><span class="line">        progress: (start, end, current, ratio) =&gt; &#123;</span><br><span class="line">            const cl = totalLen * ratio;</span><br><span class="line">            const t = getTByLen(cl);</span><br><span class="line">            const result = this.bezier(pos, mid, target, t);</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-x更新lib库"><a href="#2-4-x更新lib库" class="headerlink" title="2.4.x更新lib库"></a>2.4.x更新lib库</h2><ul>
+<li>拉最新的库版本直接替换。<br><a target="_blank" rel="noopener" href="https://github.com/cocos/cocos-engine-external">https://github.com/cocos/cocos-engine-external</a></li>
+</ul>
+<h2 id="android-firebase-crashlytics-上传符号表"><a href="#android-firebase-crashlytics-上传符号表" class="headerlink" title="android firebase crashlytics 上传符号表"></a>android firebase crashlytics 上传符号表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">firebaseCrashlytics &#123;</span><br><span class="line">    // Enable processing and uploading of native symbols to Crashlytics servers.</span><br><span class="line">    // By default, this is disabled to improve build speeds.</span><br><span class="line">    // This flag must be enabled to see properly-symbolicated native</span><br><span class="line">    // stack traces in the Crashlytics dashboard.</span><br><span class="line">    nativeSymbolUploadEnabled true</span><br><span class="line">    strippedNativeLibsDir &#x27;build/intermediates/stripped_native_libs/&#x27;</span><br><span class="line">    unstrippedNativeLibsDir &#x27;build/intermediates/merged_native_libs&#x27;</span><br><span class="line">    mappingFileUploadEnabled true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/09/development-dairy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/08/09/development-dairy/" class="post-title-link" itemprop="url">Development Dairy</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-08-09 15:05:06" itemprop="dateCreated datePublished" datetime="2025-08-09T15:05:06+08:00">2025-08-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-01-14 13:39:25" itemprop="dateModified" datetime="2026-01-14T13:39:25+08:00">2026-01-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
+<li>确定需求时直接判断是否大量复用，拆分成公用组件。</li>
+<li>App版本号规范，MAJOR.MINOR.PATCH。<blockquote>
+<p>版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
+<ul>
+<li>通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。</li>
+<li>单独类型放入各自目录下, 避免于通用类型声明混淆。</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scripts/</span><br><span class="line">├── interfaces/ --&gt;接口</span><br><span class="line">│   ├── IUser.ts</span><br><span class="line">│   └── IReward.ts</span><br><span class="line">├── activities/activity/   --&gt;某单独活动</span><br><span class="line">│   └── interfaces/</span><br><span class="line">│       └── IActivity.ts</span><br></pre></td></tr></table></figure>
+
+<h1 id="代码大全"><a href="#代码大全" class="headerlink" title="代码大全"></a>代码大全</h1><h2 id="软件构建中的设计"><a href="#软件构建中的设计" class="headerlink" title="软件构建中的设计"></a>软件构建中的设计</h2><h3 id="代码设计基本特性"><a href="#代码设计基本特性" class="headerlink" title="代码设计基本特性"></a>代码设计基本特性</h3><ul>
+<li>最小复杂度</li>
+<li>易于维护</li>
+<li>松散耦合</li>
+<li>可扩展性</li>
+<li>可重用性</li>
+<li>高扇入 (大量的类使用给定的类, 例如工具类)</li>
+<li>低扇出 (一个类适中地使用其他类)</li>
+<li>可移植性</li>
+<li>精简性</li>
+<li>层次性</li>
+<li>标准技术
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/08/09/development-dairy/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/16/DirectX12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jadehare">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 狗蛋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/16/DirectX12/" class="post-title-link" itemprop="url">DirectX12</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-16 16:29:04" itemprop="dateCreated datePublished" datetime="2021-02-16T16:29:04+08:00">2021-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="《DirectX12-3D-游戏开发实战》"><a href="#《DirectX12-3D-游戏开发实战》" class="headerlink" title="《DirectX12 3D 游戏开发实战》"></a>《DirectX12 3D 游戏开发实战》</h1><h2 id="Q-S"><a href="#Q-S" class="headerlink" title="Q&amp;S"></a>Q&amp;S</h2><hr>
+<h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><ul>
+<li><p>“HANDLE CreateEventExW(LPSECURITY_ATTRIBUTES,LPCWSTR,DWORD,DWORD)”: 无法将参数 2 从“bool”转换为“LPCWSTR” DirectX12\Common\d3dApp.cpp	535</p>
+<ul>
+<li>VS2019 报错，将 CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS); 第二个参数false改为nullptr;</li>
+</ul>
+</li>
+<li><p>LNK2019	无法解析的外部符号 _main，函数 “int __cdecl invoke_main(void)” (?invoke_main@@YAHXZ) 中引用了该符号	DirectX12\D3DCommon\MSVCRTD.lib(exe_main.obj)</p>
+<ul>
+<li>初始化时没有将项目设置为桌面应用程序，右键项目-&gt; 属性 -&gt; 配置属性 -&gt; C&#x2F;C++ -&gt; 预处理器 -&gt; 预处理器定义中将_CONSOLE 改为 _WINDOWS；..&#x2F;-&gt; 链接器 -&gt; 系统 -&gt; 子系统改为”窗口 (&#x2F;SUBSYSTEM:WINDOWS)”</li>
+</ul>
+</li>
 </ul>
 
       
@@ -319,7 +1052,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/12/snacks/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/24/Graphics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -337,7 +1070,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/12/snacks/" class="post-title-link" itemprop="url">snacks</a>
+          <a href="/2020/09/24/Graphics/" class="post-title-link" itemprop="url">Graphics</a>
         </h2>
 
         <div class="post-meta-container">
@@ -348,412 +1081,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2025-02-12 20:47:09" itemprop="dateCreated datePublished" datetime="2025-02-12T20:47:09+08:00">2025-02-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-21 14:37:33" itemprop="dateModified" datetime="2025-02-21T14:37:33+08:00">2025-02-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="零食"><a href="#零食" class="headerlink" title="零食"></a>零食</h1><h2 id="饼干"><a href="#饼干" class="headerlink" title="饼干"></a>饼干</h2><ul>
-<li>法丽兹曲奇饼干<blockquote>
-<p>不要买抹茶的。</p>
-</blockquote>
-</li>
-<li>费列罗榛子巧克力夹心威化饼干<blockquote>
-<p>最好吃的威化。</p>
-</blockquote>
-</li>
-<li>费列罗能多益榛子巧克力夹心饼干<blockquote>
-<p>不如夹心威化。</p>
-</blockquote>
-</li>
-<li>煌记黑松露火腿苏打饼干<blockquote>
-<p>好吃，偏咸口。</p>
-</blockquote>
-</li>
-<li>Aji 惊奇脆片饼干</li>
-</ul>
-<h2 id="肉类"><a href="#肉类" class="headerlink" title="肉类"></a>肉类</h2><ul>
-<li>京东京造 超干风干牛肉片麻辣味<blockquote>
-<p>好吃，品控不稳定，遇到过怪味的，发霉的。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="豆干"><a href="#豆干" class="headerlink" title="豆干"></a>豆干</h2><ul>
-<li>源氏香菇豆干</li>
-<li>大话三国张飞豆干夹心脆笋豆卷</li>
-</ul>
-<h2 id="巧克力"><a href="#巧克力" class="headerlink" title="巧克力"></a>巧克力</h2><ul>
-<li>Lindt 瑞士莲巧克力软心夹心黑巧克力<blockquote>
-<p>量大好吃</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="菌菇"><a href="#菌菇" class="headerlink" title="菌菇"></a>菌菇</h2><ul>
-<li>滇二娃云南即食菌菇</li>
-</ul>
-<h1 id="即食"><a href="#即食" class="headerlink" title="即食"></a>即食</h1><ul>
-<li>思念猪肉豆角焖面<blockquote>
-<p>味正，口感也可以</p>
-</blockquote>
-</li>
-<li>金拉面<blockquote>
-<p>面口感號</p>
-</blockquote>
-</li>
-<li>悦味纪 全麦荠菜膳食包<blockquote>
-<p>健康</p>
-</blockquote>
-</li>
-<li>正宗建德豆腐包<blockquote>
-<p>好吃</p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/05/csharp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/05/csharp/" class="post-title-link" itemprop="url">c#</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-02-05 14:23:22 / Modified: 18:50:49" itemprop="dateCreated datePublished" datetime="2025-02-05T14:23:22+08:00">2025-02-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/csharp/">https://learn.microsoft.com/zh-cn/dotnet/csharp/</a></p>
-</blockquote>
-<h2 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h2><p>良好的结构可以优化缓存命中率</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/19/software/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/11/19/software/" class="post-title-link" itemprop="url">software</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-11-19 16:20:38" itemprop="dateCreated datePublished" datetime="2024-11-19T16:20:38+08:00">2024-11-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-01-17 18:33:36" itemprop="dateModified" datetime="2025-01-17T18:33:36+08:00">2025-01-17</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><h3 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h3><ul>
-<li>库乐队<blockquote>
-<p>剪音频</p>
-</blockquote>
-</li>
-<li>ffmpeg<blockquote>
-<p>转格式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// mp3</span><br><span class="line">ffmpeg -i $&#123;file&#125; -acodec libmp3lame -b:a 320k -vn $&#123;output&#125; -y -loglevel quiet</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/11/19/software/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/21/development-dairy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/21/development-dairy/" class="post-title-link" itemprop="url">Development Dairy</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-21 15:05:06" itemprop="dateCreated datePublished" datetime="2024-10-21T15:05:06+08:00">2024-10-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-04-22 15:57:30" itemprop="dateModified" datetime="2025-04-22T15:57:30+08:00">2025-04-22</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="开发日记"><a href="#开发日记" class="headerlink" title="开发日记"></a>开发日记</h1><h2 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h2><ul>
-<li>确定需求时直接判断是否大量复用，拆分成公用组件。</li>
-<li>App版本号规范，MAJOR.MINOR.PATCH。<blockquote>
-<p>版本迭代更新MINOR，服务器也至少通过MINOR判断对应服务器。PATCH更新不需要对应服务器。ios app每次提审后都需要更新PATCH版本号，因此如果使用PATCH对应服务器版本则提审后再次更新都需要更新对应服务器。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="定义类型声明"><a href="#定义类型声明" class="headerlink" title="定义类型声明"></a>定义类型声明</h3><blockquote>
-<ul>
-<li>通用类型声明最好放一块, 便于查找, 避免定义过多重复类型。</li>
-<li>单独类型放入各自目录下, 避免于通用类型声明混淆。</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scripts/</span><br><span class="line">├── interfaces/ --&gt;接口</span><br><span class="line">│   ├── IUser.ts</span><br><span class="line">│   └── IReward.ts</span><br><span class="line">├── activities/activity/   --&gt;某单独活动</span><br><span class="line">│   └── interfaces/</span><br><span class="line">│       └── IActivity.ts</span><br></pre></td></tr></table></figure>
-
-<h1 id="代码大全"><a href="#代码大全" class="headerlink" title="代码大全"></a>代码大全</h1><h2 id="软件构建中的设计"><a href="#软件构建中的设计" class="headerlink" title="软件构建中的设计"></a>软件构建中的设计</h2><h3 id="代码设计基本特性"><a href="#代码设计基本特性" class="headerlink" title="代码设计基本特性"></a>代码设计基本特性</h3><ul>
-<li>最小复杂度</li>
-<li>易于维护</li>
-<li>松散耦合</li>
-<li>可扩展性</li>
-<li>可重用性</li>
-<li>高扇入 (大量的类使用给定的类, 例如工具类)</li>
-<li>低扇出 (一个类适中地使用其他类)</li>
-<li>可移植性</li>
-<li>精简性</li>
-<li>层次性</li>
-<li>标准技术
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/10/21/development-dairy/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/11/openGL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/11/openGL/" class="post-title-link" itemprop="url">openGL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-10-11 22:25:54" itemprop="dateCreated datePublished" datetime="2022-10-11T22:25:54+08:00">2022-10-11</time>
+      <time title="Created: 2020-09-24 18:58:36" itemprop="dateCreated datePublished" datetime="2020-09-24T18:58:36+08:00">2020-09-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -773,260 +1101,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Error-Debug"><a href="#Error-Debug" class="headerlink" title="Error Debug"></a>Error Debug</h1><h2 id="Cmake-GLFW-Error"><a href="#Cmake-GLFW-Error" class="headerlink" title="Cmake GLFW Error"></a>Cmake GLFW Error</h2><h3 id="color-red-Could-not-find-any-instance-of-Visual-Studio"><a href="#color-red-Could-not-find-any-instance-of-Visual-Studio" class="headerlink" title="$\color{red}{Could not find any instance of Visual Studio.}$"></a>$\color{red}{Could not find any instance of Visual Studio.}$</h3><ul>
-<li>Visual Studio Installer 安装 单个组件 -&gt; 用于Cmake的工具、工作负载 -&gt; Visual Studio 扩展开发</li>
+          <h1 id="Linear-Algebra"><a href="#Linear-Algebra" class="headerlink" title="Linear Algebra"></a>Linear Algebra</h1><h2 id="向量绝对值"><a href="#向量绝对值" class="headerlink" title="向量绝对值"></a>向量绝对值</h2><ul>
+<li>||v|| &#x3D; √(x^2+y^2+…)</li>
 </ul>
-<h3 id="color-red-No-CMAKE-C-COMPILER-could-be-found"><a href="#color-red-No-CMAKE-C-COMPILER-could-be-found" class="headerlink" title="$\color{red}{No CMAKE_C_COMPILER could be found.}$"></a>$\color{red}{No CMAKE_C_COMPILER could be found.}$</h3><ul>
-<li>Visual Studio Installer 安装 单个组件 -&gt; windows SDK</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/Server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/22/Server/" class="post-title-link" itemprop="url">Server</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-22 17:46:31" itemprop="dateCreated datePublished" datetime="2022-04-22T17:46:31+08:00">2022-04-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h1><h3 id="Error"><a href="#Error" class="headerlink" title="Error:"></a>Error:</h3><h4 id="Error-listen-EACCES-permission-denied-0-0-0-0-xxxx"><a href="#Error-listen-EACCES-permission-denied-0-0-0-0-xxxx" class="headerlink" title="Error: listen EACCES: permission denied 0.0.0.0:xxxx"></a><font color="#dd6666">Error: listen EACCES: permission denied 0.0.0.0:xxxx</font></h4><pre><code>- 检查端口是否被占用 netstat -ano|findstr &quot;xxxx&quot; (windows);
-- net stop winnat
-  net start winnat
-</code></pre>
 <hr>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/VR/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/11/14/VR/" class="post-title-link" itemprop="url">VR</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-11-14 13:17:01" itemprop="dateCreated datePublished" datetime="2021-11-14T13:17:01+08:00">2021-11-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Unity-VR"><a href="#Unity-VR" class="headerlink" title="Unity VR"></a>Unity VR</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><h3 id="Project-Settings"><a href="#Project-Settings" class="headerlink" title="Project Settings"></a>Project Settings</h3><ul>
-<li><p>XR Plug-in Management -&gt; Oculus -&gt; Stereo Rendering Mode -&gt; Multi Pass</p>
+<h2 id="Dot-Product-点积、内积-P·Q"><a href="#Dot-Product-点积、内积-P·Q" class="headerlink" title="Dot Product 点积、内积 P·Q"></a>Dot Product 点积、内积 P·Q</h2><h4 id="几何定义："><a href="#几何定义：" class="headerlink" title="几何定义："></a>几何定义：</h4><p><img src="/../img/dotProduct.png" alt="avatar"></p>
+<h4 id="代数定义："><a href="#代数定义：" class="headerlink" title="代数定义："></a>代数定义：</h4><p><img src="/../img/dotProductFormular.png" alt="avatar"></p>
+<h4 id="主要用于"><a href="#主要用于" class="headerlink" title="主要用于"></a>主要用于</h4><ul>
+<li><p>计算向量夹角余弦值</p>
 </li>
-<li><p>Player -&gt; android -&gt; Other Settings -&gt; Graphics APIs 添加 OpenGLES3</p>
+<li><p>计算a向量在b向量上的投影: a的单位向量乘以b向量长度再乘以两向量夹角余弦<br><img src="/../img/projection.jpg" alt="avatar"></p>
+</li>
+<li><p>sqrt(dot(a,a)) &#x3D; length(a)</p>
 </li>
 </ul>
-<h3 id="Build-Settings"><a href="#Build-Settings" class="headerlink" title="Build Settings"></a>Build Settings</h3><ul>
-<li><p>Android</p>
-<ul>
-<li><p>Run Device -&gt; Oculus Quest -&gt; Switch Platform</p>
-</li>
-<li><p>Texture Compression -&gt; ASTC</p>
-</li>
+<hr>
+<h2 id="Cross-Product-外积-P-x-Q"><a href="#Cross-Product-外积-P-x-Q" class="headerlink" title="Cross Product 外积 P x Q"></a>Cross Product 外积 P x Q</h2><p>||PxQ|| &#x3D; ||P|| ||Q|| sinα</p>
+<h4 id="代数定义：-1"><a href="#代数定义：-1" class="headerlink" title="代数定义："></a>代数定义：</h4><p><img src="/../img/crossProduct.png" alt="avatar"></p>
+<h4 id="主要用于-1"><a href="#主要用于-1" class="headerlink" title="主要用于"></a>主要用于</h4><ul>
+<li>判断左右，右手螺旋定则，a x b，z为正则在a左侧，反之则右侧，0两个向量平行</li>
+<li>判断点是否包含于图形<br><img src="/../img/crossProductContain.png" alt="avatar"><br>AB x AP, BC x BP, CA x CP, 若z值同向则包含ABC包含P</li>
 </ul>
-</li>
-</ul>
+<p>Orthonormal bases 正交，内积为0则为正交向量</p>
+<p>Coordinate frames</p>
+<hr>
+<h1 id="ShaderToy"><a href="#ShaderToy" class="headerlink" title="ShaderToy"></a>ShaderToy</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 平滑过渡</span><br><span class="line">float smoothstep(float a, float b, float x)&#123;</span><br><span class="line">    // saturate 取0 ~ 1范围内的值</span><br><span class="line">    float t = saturate((x - a)/(b - a));</span><br><span class="line">    return t*t*(3.0 - (2.0*t));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 混合函数</span><br><span class="line">vec3 mix(vec3 x,vec3 y,float a)&#123;</span><br><span class="line">    return x * (1. - a) + y * a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/14/CPlusPlus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jadehare">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 狗蛋">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/14/CPlusPlus/" class="post-title-link" itemprop="url">CPlusPlus</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-14 23:14:44" itemprop="dateCreated datePublished" datetime="2021-03-14T23:14:44+08:00">2021-03-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 14:49:58" itemprop="dateModified" datetime="2024-10-21T14:49:58+08:00">2024-10-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="explicit"><a href="#explicit" class="headerlink" title="explicit"></a>explicit</h1><p>  构造用explicit声明，防止非必要的隐式转换</p>
-<h1 id="reference"><a href="#reference" class="headerlink" title="reference &amp;"></a>reference &amp;</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int val = 1024;</span><br><span class="line">    int &amp;refVal = ival;</span><br><span class="line"></span><br><span class="line">    int ii = val;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    val = 1025;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    refVal = 1026;</span><br><span class="line">    std::cout &lt;&lt; val &lt;&lt; &quot;  &quot; &lt;&lt; refVal &lt;&lt; &quot;  &quot; &lt;&lt; ii &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 1024  1024  1024</span><br><span class="line">// 1025  1025  1024</span><br><span class="line">// 1026  1026  1024</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1045,7 +1145,7 @@
 
 
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -1056,7 +1156,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
@@ -1090,6 +1190,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
 
   
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.0/pdfobject.min.js","integrity":"sha256-JJZNsid68vnh3/zyj0lY9BN5ynxVX/12XgOa1TlaYN0="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
 
 
 
