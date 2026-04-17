@@ -21,14 +21,17 @@
 
     <meta name="description" content="MacGit 查看 ts 文件增删记录 12date&#x3D;&quot;2025-04-29&quot;;authorName&#x3D;$(git config user.name);git log --all --author&#x3D;$&#123;authorName&#125; --since&#x3D;&quot;$&#123;date&#125; 00:00:00&quot; --until&#x3D;&quot;$&#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell">
+<meta property="og:title" content="开发环境与部署笔记">
 <meta property="og:url" content="http://example.com/2025/06/03/shell/index.html">
 <meta property="og:site_name" content="狗蛋">
 <meta property="og:description" content="MacGit 查看 ts 文件增删记录 12date&#x3D;&quot;2025-04-29&quot;;authorName&#x3D;$(git config user.name);git log --all --author&#x3D;$&#123;authorName&#125; --since&#x3D;&quot;$&#123;date&#125; 00:00:00&quot; --until&#x3D;&quot;$&#123;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-06-03T06:26:10.000Z">
-<meta property="article:modified_time" content="2025-06-27T06:24:50.145Z">
+<meta property="article:modified_time" content="2026-04-17T05:49:06.288Z">
 <meta property="article:author" content="jadehare">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="环境">
+<meta property="article:tag" content="部署">
 <meta name="twitter:card" content="summary">
 
 
@@ -36,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/06/03/shell/","path":"2025/06/03/shell/","title":"shell"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2025/06/03/shell/","path":"2025/06/03/shell/","title":"开发环境与部署笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>shell | 狗蛋</title>
+<title>开发环境与部署笔记 | 狗蛋</title>
   
 
 
@@ -119,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac"><span class="nav-number">1.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System"><span class="nav-number">1.2.</span> <span class="nav-text">System</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Certbot"><span class="nav-number">2.1.</span> <span class="nav-text">Certbot</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac"><span class="nav-number">1.</span> <span class="nav-text">Mac</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System"><span class="nav-number">1.2.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ruby"><span class="nav-number">1.3.</span> <span class="nav-text">Ruby</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Certbot"><span class="nav-number">2.1.</span> <span class="nav-text">Certbot</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-number">3.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">3.1.</span> <span class="nav-text">Deploy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Error-listen-EACCES-permission-denied-0-0-0-0-xxxx"><span class="nav-number">3.1.1.</span> <span class="nav-text">Error: listen EACCES: permission denied 0.0.0.0:xxxx</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -132,12 +135,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -177,12 +180,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="shell | 狗蛋">
+      <meta itemprop="name" content="开发环境与部署笔记 | 狗蛋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          shell
+          开发环境与部署笔记
         </h1>
 
         <div class="post-meta-container">
@@ -200,7 +203,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-06-27 14:24:50" itemprop="dateModified" datetime="2025-06-27T14:24:50+08:00">2025-06-27</time>
+      <time title="Modified: 2026-04-17 13:49:06" itemprop="dateModified" datetime="2026-04-17T13:49:06+08:00">2026-04-17</time>
     </span>
 
   
@@ -222,9 +225,23 @@
 <h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><ul>
 <li>查看应用内存使用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -axo rss,comm | grep &#x27;Google Chrome&#x27; | awk &#x27;&#123;sum+=$1&#125; END &#123;print sum/1024 &quot; MB&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><ul>
+<li><p>rvm 安装 ruby 报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">brew install ruby</span><br><span class="line">// 查看自己安装的是哪个版本</span><br><span class="line"></span><br><span class="line">rvm mount /usr/local/Cellar/ruby/3.4.2</span><br><span class="line">// mount 命令好像会让你自己起名，没起直接用默认的了。</span><br><span class="line"></span><br><span class="line">// rvm list 查看名字</span><br><span class="line">rvm use ext-ruby-3.4.2-rd2930f8e7a --default</span><br><span class="line"></span><br><span class="line">// use 后环境可能有问题，重登 shell ruby 依然使用的系统 ruby，直接重装 rvm</span><br><span class="line">rvm get stable --auto-dotfiles</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rvm 安装警告，乱七八糟的问题。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 直接重装</span><br><span class="line">rvm implode</span><br><span class="line">\curl -sSL https://get.rvm.io | bash</span><br><span class="line"><span class="built_in">source</span> ~/.rvm/scripts/rvm</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Certbot"><a href="#Certbot" class="headerlink" title="Certbot"></a>Certbot</h2><ul>
 <li>自动部署，添加nginx配置<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install certbot python3-certbot-nginx -y</span><br><span class="line">sudo certbot --nginx -d &#123;url&#125;</span><br></pre></td></tr></table></figure></li>
 <li>只生成证书<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot certonly --standalone -d dice.dogeggs.cn</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><h3 id="Error-listen-EACCES-permission-denied-0-0-0-0-xxxx"><a href="#Error-listen-EACCES-permission-denied-0-0-0-0-xxxx" class="headerlink" title="Error: listen EACCES: permission denied 0.0.0.0:xxxx"></a>Error: listen EACCES: permission denied 0.0.0.0:xxxx</h3><ul>
+<li><p>检查端口是否被占用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr <span class="string">&quot;xxxx&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启 winnat：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop winnat</span><br><span class="line">net start winnat</span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
@@ -234,18 +251,23 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/shell/" rel="tag"># shell</a>
+              <a href="/tags/%E7%8E%AF%E5%A2%83/" rel="tag"># 环境</a>
+              <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/02/21/FuckEnv/" rel="prev" title="FuckEnv">
-                  <i class="fa fa-angle-left"></i> FuckEnv
+                <a href="/2025/02/12/snacks/" rel="prev" title="snacks">
+                  <i class="fa fa-angle-left"></i> snacks
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/08/09/development-dairy/" rel="next" title="Development Dairy">
-                  Development Dairy <i class="fa fa-angle-right"></i>
+                <a href="/2025/08/09/development-dairy/" rel="next" title="工程实践与研发管理">
+                  工程实践与研发管理 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
